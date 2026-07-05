@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Order Confirmed — DanielsPrints{% endblock %}
+
+{% block content %}
+<div class="container section" style="max-width:600px;text-align:center;">
+  <h2>Thank you, {{ order.customer_name }}!</h2>
+  <p>Your order <strong>{{ order.order_id }}</strong> has been received.</p>
+  <p>We'll contact you within 24h to confirm details and shipping.</p>
+
+  <div style="text-align:left;margin-top:2rem;">
+    <h3>Order Summary</h3>
+    <ul>
+    {% for item in order.items %}
+      <li>{{ item.quantity }} × {{ item.product_name }} ({{ item.size }}) — {{ item.unit_price }} Kč</li>
+    {% endfor %}
+    </ul>
+    <p><strong>Total: {{ order.total_price_czk }} Kč</strong></p>
+    <p>Status: {{ order.get_status_display }}</p>
+  </div>
+
+  <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+</div>
+{% endblock %}

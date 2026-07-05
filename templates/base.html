@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}DanielsPrints — 3D Printed Receipts{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+  {% block extra_head %}{% endblock %}
+</head>
+<body>
+  <nav class="navbar">
+    <a href="{% url 'home' %}"><img src="{% static 'images/logo.svg' %}" alt="DanielsPrints" class="logo"></a>
+    <div class="nav-links">
+      <a href="{% url 'home' %}">Home</a>
+      <a href="{% url 'products:list' %}">Shop</a>
+      <a href="{% url 'builder:index' %}">Builder</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'cart:detail' %}" class="cart-link">
+        Cart{% if cart_count %}<span class="cart-badge">{{ cart_count }}</span>{% endif %}
+      </a>
+    </div>
+  </nav>
+
+  {% if messages %}
+  <div class="container" style="margin-top:1rem;">
+    {% for message in messages %}
+      <div style="padding:0.75rem 1rem;border-radius:8px;background:#e6fff2;margin-bottom:0.5rem;">{{ message }}</div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <main>
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-links">
+        <a href="{% url 'about' %}">About</a>
+        <a href="{% url 'terms' %}">Terms of Service</a>
+        <a href="{% url 'privacy' %}">Privacy Policy</a>
+        <a href="{% url 'shipping' %}">Shipping Info</a>
+        <a href="{% url 'contact' %}">Contact</a>
+      </div>
+      <div class="footer-bottom">&copy; {% now "Y" %} DanielsPrints. All rights reserved.</div>
+    </div>
+  </footer>
+
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,18 @@
+[Unit]
+Description=DanielsPrints Gunicorn daemon
+After=network.target
+
+[Service]
+User=www-data
+Group=www-data
+WorkingDirectory=/var/www/shop
+EnvironmentFile=/var/www/shop/.env
+ExecStart=/var/www/shop/venv/bin/gunicorn \
+    --workers 3 \
+    --bind 127.0.0.1:8005 \
+    shop_config.wsgi:application
+
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

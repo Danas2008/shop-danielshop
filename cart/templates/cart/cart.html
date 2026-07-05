@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block title %}Cart — DanielsPrints{% endblock %}
+
+{% block content %}
+<div class="container section">
+  <h2>Your Cart</h2>
+  {% if items %}
+  <table class="cart-table">
+    <thead><tr><th>Product</th><th>Size</th><th>Qty</th><th>Price</th><th></th></tr></thead>
+    <tbody>
+    {% for item in items %}
+      <tr>
+        <td>{{ item.product.name }}{% if item.custom_config.add_magnets %} + magnets{% endif %}</td>
+        <td>{{ item.get_size_display }}</td>
+        <td>
+          <form method="post" action="{% url 'cart:update' item.id %}" style="display:inline;">
+            {% csrf_token %}
+            <input type="number" name="quantity" value="{{ item.quantity }}" min="1" style="width:60px;" onchange="this.form.submit()">
+          </form>
+        </td>
+        <td>{{ item.total_price }} Kč</td>
+        <td>
+          <form method="post" action="{% url 'cart:remove' item.id %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline">Remove</button>
+          </form>
+        </td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <div class="cart-summary">
+    <p><strong>Subtotal:</strong> {{ subtotal }} Kč</p>
+    <p style="color:#777;font-size:0.9rem;">Shipping calculated at checkout.</p>
+    <a href="{% url 'checkout' %}" class="btn btn-primary" style="width:100%;text-align:center;">Checkout</a>
+  </div>
+  {% else %}
+  <p>Your cart is empty. <a href="{% url 'products:list' %}">Browse the shop</a>.</p>
+  {% endif %}
+</div>
+{% endblock %}

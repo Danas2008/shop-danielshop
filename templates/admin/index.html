@@ -1,0 +1,70 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static dashboard_tags %}
+
+{% block content %}
+{% dashboard_stats as stats %}
+<div class="row">
+  <div class="col-md-3"><div class="small-box bg-success"><div class="inner">
+    <h3>{{ stats.revenue_month|floatformat:0 }} Kč</h3><p>Revenue this month</p></div></div></div>
+  <div class="col-md-3"><div class="small-box bg-info"><div class="inner">
+    <h3>{{ stats.revenue_all_time|floatformat:0 }} Kč</h3><p>Revenue all-time</p></div></div></div>
+  <div class="col-md-3"><div class="small-box bg-warning"><div class="inner">
+    <h3>{{ stats.orders_pending }}</h3><p>Pending orders</p></div></div></div>
+  <div class="col-md-3"><div class="small-box bg-primary"><div class="inner">
+    <h3>{{ stats.orders_month }}</h3><p>Orders this month</p></div></div></div>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div class="card"><div class="card-header"><h3 class="card-title">Revenue — last 30 days</h3></div>
+      <div class="card-body"><canvas id="revenueChart" height="120"></canvas></div></div>
+  </div>
+  <div class="col-md-3">
+    <div class="card"><div class="card-header"><h3 class="card-title">Orders by status</h3></div>
+      <div class="card-body"><canvas id="statusChart" height="180"></canvas></div></div>
+  </div>
+  <div class="col-md-3">
+    <div class="card"><div class="card-header"><h3 class="card-title">Top products</h3></div>
+      <div class="card-body"><canvas id="topProductsChart" height="180"></canvas></div></div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="card"><div class="card-header"><h3 class="card-title">Recent orders</h3></div>
+      <div class="card-body table-responsive p-0">
+        <table class="table table-striped">
+          <thead><tr><th>Order</th><th>Customer</th><th>Total (Kč)</th><th>Status</th><th>Date</th></tr></thead>
+          <tbody>
+          {% for order in stats.recent_orders %}
+            <tr>
+              <td><a href="{% url 'admin:orders_order_change' order.pk %}">{{ order.order_id }}</a></td>
+              <td>{{ order.customer_name }}</td>
+              <td>{{ order.total_price_czk }}</td>
+              <td>{{ order.get_status_display }}</td>
+              <td>{{ order.created_at|date:"Y-m-d H:i" }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<script>
+new Chart(document.getElementById('revenueChart'), {
+  type: 'line',
+  data: { labels: {{ stats.revenue_days_json|safe }}, datasets: [{ label: 'Revenue (Kč)', data: {{ stats.revenue_data_json|safe }}, borderColor: '#42f59e', tension: 0.3 }] }
+});
+new Chart(document.getElementById('statusChart'), {
+  type: 'pie',
+  data: { labels: {{ stats.status_labels_json|safe }}, datasets: [{ data: {{ stats.status_data_json|safe }}, backgroundColor: ['#f59e0b','#42f59e','#3b82f6','#8b5cf6','#10b981'] }] }
+});
+new Chart(document.getElementById('topProductsChart'), {
+  type: 'bar',
+  data: { labels: {{ stats.top_products_labels_json|safe }}, datasets: [{ label: 'Units sold', data: {{ stats.top_products_data_json|safe }}, backgroundColor: '#1a1a1a' }] }
+});
+</script>
+{% endblock %}

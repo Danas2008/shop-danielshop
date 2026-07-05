@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Custom Receipt Builder — DanielsPrints{% endblock %}
+
+{% block content %}
+<div class="container section">
+  <h2>Build Your Own Receipt</h2>
+  <div class="builder-layout">
+    <div>
+      <form id="builder-form">
+        {% csrf_token %}
+        <input type="hidden" id="builder_product_id" value="{{ builder_product.pk|default:'' }}">
+        {% if not builder_product %}
+        <p style="color:var(--error);">The custom builder product is not configured yet — contact the shop owner.</p>
+        {% endif %}
+        <div class="form-group">
+          <label for="template">Start from a template</label>
+          <select id="template">
+            <option value="">Blank / Custom</option>
+            {% for value, label in templates %}
+            <option value="{{ value }}">{{ label }}</option>
+            {% endfor %}
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="store_name">Store name</label>
+          <input type="text" id="store_name" maxlength="60" placeholder="e.g. THE HAVLICEK'S">
+        </div>
+
+        <div class="form-group"><label>Items</label>
+          <div style="display:flex;gap:0.5rem;margin-bottom:0.5rem;">
+            <input type="text" class="item-name" placeholder="Item name" style="flex:2;padding:0.5rem;">
+            <input type="number" class="item-price" placeholder="Price" step="0.01" style="flex:1;padding:0.5rem;">
+          </div>
+          <div style="display:flex;gap:0.5rem;margin-bottom:0.5rem;">
+            <input type="text" class="item-name" placeholder="Item name" style="flex:2;padding:0.5rem;">
+            <input type="number" class="item-price" placeholder="Price" step="0.01" style="flex:1;padding:0.5rem;">
+          </div>
+          <div style="display:flex;gap:0.5rem;">
+            <input type="text" class="item-name" placeholder="Item name" style="flex:2;padding:0.5rem;">
+            <input type="number" class="item-price" placeholder="Price" step="0.01" style="flex:1;padding:0.5rem;">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="custom_message">Message</label>
+          <textarea id="custom_message" maxlength="200" rows="3" placeholder="A little note..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="receipt_date">Date</label>
+          <input type="date" id="receipt_date">
+        </div>
+
+        <div class="form-group">
+          <label for="height">Height</label>
+          <select id="height">
+            <option value="12">Standard (8×12cm) — 400 Kč</option>
+            <option value="18">Large (8×18cm) — 500 Kč</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label><input type="checkbox" id="add_magnets"> Add magnets (+49 Kč)</label>
+        </div>
+
+        <button type="button" id="add-to-cart-btn" class="btn btn-primary">Add to Cart — <span id="price-tag">400</span> Kč</button>
+        <p id="add-to-cart-message" style="color:var(--success);margin-top:0.5rem;"></p>
+      </form>
+    </div>
+
+    <div class="receipt-preview-wrap">
+      <div class="receipt-paper" id="receipt-preview">
+        <div class="store-name" id="p-store">YOUR STORE</div>
+        <div class="divider"></div>
+        <div id="p-items"></div>
+        <div class="divider"></div>
+        <div class="total-line"><span>TOTAL</span><span id="p-total">0.00</span></div>
+        <div class="message" id="p-message"></div>
+        <div class="date" id="p-date"></div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/cart.js' %}"></script>
+<script src="{% static 'js/preview.js' %}"></script>
+{% endblock %}

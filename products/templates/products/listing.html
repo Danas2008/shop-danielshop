@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Shop — DanielsPrints{% endblock %}
+
+{% block content %}
+<div class="container section">
+  <h2>Shop</h2>
+  <div style="margin-bottom:1.5rem;text-align:center;">
+    <a href="{% url 'products:list' %}" class="btn {% if not category %}btn-dark{% else %}btn-outline{% endif %}">All</a>
+    {% for value, label in categories %}
+      <a href="?category={{ value }}" class="btn {% if category == value %}btn-dark{% else %}btn-outline{% endif %}" style="margin-left:0.5rem;">{{ label }}</a>
+    {% endfor %}
+  </div>
+
+  <div class="grid">
+    {% for product in page_obj %}
+    <a href="{{ product.get_absolute_url }}" class="card">
+      {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% else %}<img src="{% static 'images/logo.svg' %}" alt="{{ product.name }}" style="object-fit:contain;padding:2rem;">{% endif %}
+      <div class="card-body">
+        <h3>{{ product.name }}</h3>
+        <div class="card-price">from {{ product.price_base_czk }} Kč</div>
+      </div>
+    </a>
+    {% empty %}
+    <p>No products found.</p>
+    {% endfor %}
+  </div>
+
+  {% if page_obj.has_other_pages %}
+  <div style="margin-top:2rem;text-align:center;">
+    {% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}{% if category %}&category={{ category }}{% endif %}">&laquo; Prev</a>{% endif %}
+    <span style="margin:0 1rem;">Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}</span>
+    {% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}{% if category %}&category={{ category }}{% endif %}">Next &raquo;</a>{% endif %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

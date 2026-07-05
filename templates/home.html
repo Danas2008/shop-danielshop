@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<section class="hero">
+  <h1>Turn your milestones into 3D printed receipts</h1>
+  <p>Keepsake receipts commemorating your anniversary, first date, new dog, or best friendships — printed, embossed, and shipped to your door.</p>
+  <a href="{% url 'builder:index' %}" class="btn btn-primary">Build Your Own Receipt</a>
+  <a href="{% url 'products:list' %}" class="btn btn-outline" style="margin-left:0.75rem;">Shop Ready-Made</a>
+</section>
+
+<section class="section container">
+  <h2>Ready-Made Receipts</h2>
+  <div class="grid">
+    {% for product in ready_made %}
+    <a href="{{ product.get_absolute_url }}" class="card">
+      {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% else %}<img src="{% static 'images/logo.svg' %}" alt="{{ product.name }}" style="object-fit:contain;padding:2rem;">{% endif %}
+      <div class="card-body">
+        <h3>{{ product.name }}</h3>
+        <div class="card-price">from {{ product.price_base_czk }} Kč</div>
+      </div>
+    </a>
+    {% empty %}
+    <p>Ready-made receipts coming soon.</p>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section container">
+  <div class="cta-banner">
+    <h2>Design Your Own Receipt</h2>
+    <p>Full control over store name, items, message, and size — with a live 3D preview as you type.</p>
+    <a href="{% url 'builder:index' %}" class="btn btn-primary">Open the Builder</a>
+  </div>
+</section>
+
+<section class="section container">
+  <h2>Custom STL Models</h2>
+  <div class="grid">
+    {% for product in stl_models %}
+    <a href="{{ product.get_absolute_url }}" class="card">
+      {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% else %}<img src="{% static 'images/logo.svg' %}" alt="{{ product.name }}" style="object-fit:contain;padding:2rem;">{% endif %}
+      <div class="card-body">
+        <h3>{{ product.name }}</h3>
+        <div class="card-price">{{ product.price_base_czk }} Kč</div>
+      </div>
+    </a>
+    {% empty %}
+    <p>STL models coming soon.</p>
+    {% endfor %}
+  </div>
+</section>
+{% endblock %}

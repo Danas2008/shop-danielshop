@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ product.name }} — DanielsPrints{% endblock %}
+
+{% block content %}
+<div class="container section">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;">
+    <div>
+      {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}" style="width:100%;border-radius:12px;">{% else %}<img src="{% static 'images/logo.svg' %}" alt="{{ product.name }}" style="width:100%;padding:3rem;background:#f4f4f4;border-radius:12px;">{% endif %}
+    </div>
+    <div>
+      <h1>{{ product.name }}</h1>
+      <p>{{ product.description }}</p>
+
+      <form id="add-to-cart-form">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="{{ product.pk }}">
+
+        {% if product.category == "ready_made" %}
+          <div class="form-group">
+            <label for="recipient_name">Recipient name</label>
+            <input type="text" id="recipient_name" name="recipient_name" required>
+          </div>
+          <div class="form-group">
+            <label for="your_name">Your name</label>
+            <input type="text" id="your_name" name="your_name" required>
+          </div>
+          <div class="form-group">
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+        {% endif %}
+
+        <div class="form-group">
+          <label for="size">Size</label>
+          <select id="size" name="size">
+            <option value="standard">Standard (8×12cm) — {{ product.price_base_czk }} Kč</option>
+            {% if product.price_large_czk %}
+            <option value="large">Large (8×18cm) — {{ product.price_large_czk }} Kč</option>
+            {% endif %}
+          </select>
+        </div>
+
+        {% if product.category != "custom_stl" %}
+        <div class="form-group">
+          <label><input type="checkbox" name="add_magnets" id="add_magnets"> Add magnets (+{{ product.magnets_price_czk }} Kč)</label>
+        </div>
+        {% endif %}
+
+        <button type="submit" class="btn btn-primary">Add to Cart</button>
+      </form>
+      <p id="add-to-cart-message" style="color:var(--success);margin-top:0.5rem;"></p>
+    </div>
+  </div>
+
+  {% if related %}
+  <h2 style="margin-top:3rem;">You might also like</h2>
+  <div class="grid">
+    {% for r in related %}
+    <a href="{{ r.get_absolute_url }}" class="card">
+      {% if r.image %}<img src="{{ r.image.url }}" alt="{{ r.name }}">{% else %}<img src="{% static 'images/logo.svg' %}" alt="{{ r.name }}" style="object-fit:contain;padding:2rem;">{% endif %}
+      <div class="card-body">
+        <h3>{{ r.name }}</h3>
+        <div class="card-price">from {{ r.price_base_czk }} Kč</div>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/cart.js' %}"></script>
+<script>
+document.getElementById('add-to-cart-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  const form = e.target;
+  const data = new FormData(form);
+  const customConfig = {};
+  {% if product.category == "ready_made" %}
+  customConfig.recipient_name = data.get('recipient_name');
+  customConfig.your_name = data.get('your_name');
+  customConfig.date = data.get('date');
+  {% endif %}
+  addToCart({
+    product_id: data.get('product_id'),
+    size: data.get('size'),
+    add_magnets: form.querySelector('#add_magnets') && form.querySelector('#add_magnets').checked,
+    custom_config: JSON.stringify(customConfig),
+  }).then(() => {
+    document.getElementById('add-to-cart-message').textContent = 'Added to cart!';
+  });
+});
+</script>
+{% endblock %}
