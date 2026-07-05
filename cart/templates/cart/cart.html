@@ -6,6 +6,7 @@
 <div class="container section">
   <h2>Your Cart</h2>
   {% if items %}
+  <div class="cart-table-wrap">
   <table class="cart-table">
     <thead><tr><th>Product</th><th>Size</th><th>Qty</th><th>Price</th><th></th></tr></thead>
     <tbody>
@@ -30,6 +31,7 @@
     {% endfor %}
     </tbody>
   </table>
+  </div>
 
   <div class="cart-summary">
     <p><strong>Subtotal:</strong> {{ subtotal }} Kč</p>

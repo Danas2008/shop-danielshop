@@ -5,8 +5,10 @@
 <section class="hero">
   <h1>Turn your milestones into 3D printed receipts</h1>
   <p>Keepsake receipts commemorating your anniversary, first date, new dog, or best friendships — printed, embossed, and shipped to your door.</p>
-  <a href="{% url 'builder:index' %}" class="btn btn-primary">Build Your Own Receipt</a>
-  <a href="{% url 'products:list' %}" class="btn btn-outline" style="margin-left:0.75rem;">Shop Ready-Made</a>
+  <div style="display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;">
+    <a href="{% url 'builder:index' %}" class="btn btn-primary">Build Your Own Receipt</a>
+    <a href="{% url 'products:list' %}" class="btn btn-outline">Shop Ready-Made</a>
+  </div>
 </section>
 
 <section class="section container">
