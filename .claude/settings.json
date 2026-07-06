@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /tmp/admin_live.html -w \"status:%{http_code}\\\\n\" https://shop.danielhavlicek.cz/admin/)"
+    ]
+  }
+}
