@@ -2,9 +2,18 @@
 {% load i18n %}
 {% block title %}{% trans "About" %} — DanielsPrints{% endblock %}
 {% block content %}
-<div class="container section" style="max-width:700px;">
+<div class="container section" style="max-width:760px;">
   <h2>{% trans "About DanielsPrints" %}</h2>
   <p>{% blocktrans %}DanielsPrints creates personalized 3D-printed keepsakes that turn your favourite moments — anniversaries, first dates, a special song, a meaningful place — into a tangible memento. Every piece is printed on demand and fully customized by you.{% endblocktrans %}</p>
-  <p>{% blocktrans %}We're a small, independent print shop focused on quality and quick turnaround.{% endblocktrans %}</p>
+
+  <p>{% blocktrans %}It started with a simple idea: receipts and tickets from a first date or a wedding day are often the only physical trace of a memory that means everything. We wanted to give those moments a home — something you can actually hold, put on a shelf, or give as a gift, instead of a photo buried in a camera roll.{% endblocktrans %}</p>
+
+  <h3>{% trans "How we work" %}</h3>
+  <p>{% blocktrans %}We're a small, independent print shop based in the Czech Republic, focused on quality and quick turnaround. Every plaque is designed and prepared by hand after you submit your order — no mass production, no templates shared between customers. You customize it in our live builder, we review it, print it on our own 3D printers, and pack it carefully for shipping.{% endblocktrans %}</p>
+
+  <h3>{% trans "What we stand for" %}</h3>
+  <p>{% blocktrans %}Quality materials, honest pricing, and a fast reply if something needs fixing. We personally check every order before it goes to print, and we're always happy to make small adjustments if you spot a typo or change your mind about a detail.{% endblocktrans %}</p>
+
+  <p>{% blocktrans %}Have an idea that doesn't quite fit our current product types? Reach out — we're always looking to add new ways to print your memories.{% endblocktrans %}</p>
 </div>
 {% endblock %}

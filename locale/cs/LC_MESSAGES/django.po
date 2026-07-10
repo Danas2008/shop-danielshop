@@ -78,7 +78,7 @@ msgid "Build your own"
 msgstr "Vytvořte si vlastní"
 
 msgid "Builder"
-msgstr "Návrhář"
+msgstr "Vlastní Design"
 
 msgid "By placing an order with DanielsPrints, you agree to the following terms:"
 msgstr "Odesláním objednávky u DanielsPrints souhlasíte s následujícími podmínkami:"
@@ -466,3 +466,36 @@ msgstr "od"
 
 msgid "magnets"
 msgstr "magnety"
+
+msgid "It started with a simple idea: receipts and tickets from a first date or a wedding day are often the only physical trace of a memory that means everything. We wanted to give those moments a home — something you can actually hold, put on a shelf, or give as a gift, instead of a photo buried in a camera roll."
+msgstr "Vše začalo jednoduchou myšlenkou: účtenky a lístky z prvního rande nebo svatebního dne jsou často jediným hmatatelným důkazem vzpomínky, na které nejvíc záleží. Chtěli jsme dát těmto okamžikům domov — něco, co si opravdu můžete vzít do ruky, postavit na poličku nebo věnovat jako dárek, místo fotky zapadlé ve fotogalerii telefonu."
+
+msgid "How we work"
+msgstr "Jak pracujeme"
+
+msgid "We're a small, independent print shop based in the Czech Republic, focused on quality and quick turnaround. Every plaque is designed and prepared by hand after you submit your order — no mass production, no templates shared between customers. You customize it in our live builder, we review it, print it on our own 3D printers, and pack it carefully for shipping."
+msgstr "Jsme malá nezávislá tiskárna se sídlem v České republice, zaměřená na kvalitu a rychlé zpracování. Každá plaketa je po odeslání objednávky navržena a připravena ručně — žádná hromadná výroba, žádné sdílené šablony mezi zákazníky. Návrh si upravíte v našem interaktivním editoru, my ho zkontrolujeme, vytiskneme na vlastních 3D tiskárnách a pečlivě zabalíme k odeslání."
+
+msgid "What we stand for"
+msgstr "Za čím si stojíme"
+
+msgid "Quality materials, honest pricing, and a fast reply if something needs fixing. We personally check every order before it goes to print, and we're always happy to make small adjustments if you spot a typo or change your mind about a detail."
+msgstr "Kvalitní materiály, poctivé ceny a rychlá odpověď, pokud je potřeba něco opravit. Každou objednávku osobně zkontrolujeme, než jde do tisku, a rádi provedeme drobné úpravy, pokud si všimnete překlepu nebo si to s nějakým detailem rozmyslíte."
+
+msgid "Have an idea that doesn't quite fit our current product types? Reach out — we're always looking to add new ways to print your memories."
+msgstr "Máte nápad, který úplně nezapadá do našich současných produktů? Ozvěte se — rádi hledáme nové způsoby, jak vytisknout vaše vzpomínky."
+
+msgid "Have a question about an order, a custom idea you'd like to discuss, or something not quite right with a piece you received? We read every message ourselves and usually reply within 24 hours."
+msgstr "Máte dotaz k objednávce, vlastní nápad, který chcete probrat, nebo s doručeným kouskem něco nesedí? Každou zprávu čteme osobně a obvykle odpovídáme do 24 hodin."
+
+msgid "Other ways to reach us"
+msgstr "Další způsoby, jak nás kontaktovat"
+
+msgid "Already have an order number? Include it in your message so we can find it faster."
+msgstr "Máte už číslo objednávky? Uveďte ho ve zprávě, ať ji rychleji dohledáme."
+
+msgid "Before ordering: if you're unsure whether an idea is possible with one of our product types, ask first — we're happy to advise on wording length, image quality, or coordinate formats before you pay."
+msgstr "Před objednávkou: pokud si nejste jisti, zda je váš nápad s některým z našich produktů realizovatelný, zeptejte se předem — rádi poradíme s délkou textu, kvalitou obrázku nebo formátem souřadnic ještě před platbou."
+
+msgid "After ordering: order confirmations and shipping updates are sent to the email address you provide at checkout — please check your spam folder if you don't see them."
+msgstr "Po objednávce: potvrzení objednávky a informace o odeslání chodí na e-mail zadaný při objednávce — pokud je nevidíte, zkontrolujte prosím složku spam."

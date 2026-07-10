@@ -466,3 +466,36 @@ msgstr ""
 
 msgid "magnets"
 msgstr ""
+
+msgid "It started with a simple idea: receipts and tickets from a first date or a wedding day are often the only physical trace of a memory that means everything. We wanted to give those moments a home — something you can actually hold, put on a shelf, or give as a gift, instead of a photo buried in a camera roll."
+msgstr ""
+
+msgid "How we work"
+msgstr ""
+
+msgid "We're a small, independent print shop based in the Czech Republic, focused on quality and quick turnaround. Every plaque is designed and prepared by hand after you submit your order — no mass production, no templates shared between customers. You customize it in our live builder, we review it, print it on our own 3D printers, and pack it carefully for shipping."
+msgstr ""
+
+msgid "What we stand for"
+msgstr ""
+
+msgid "Quality materials, honest pricing, and a fast reply if something needs fixing. We personally check every order before it goes to print, and we're always happy to make small adjustments if you spot a typo or change your mind about a detail."
+msgstr ""
+
+msgid "Have an idea that doesn't quite fit our current product types? Reach out — we're always looking to add new ways to print your memories."
+msgstr ""
+
+msgid "Have a question about an order, a custom idea you'd like to discuss, or something not quite right with a piece you received? We read every message ourselves and usually reply within 24 hours."
+msgstr ""
+
+msgid "Other ways to reach us"
+msgstr ""
+
+msgid "Already have an order number? Include it in your message so we can find it faster."
+msgstr ""
+
+msgid "Before ordering: if you're unsure whether an idea is possible with one of our product types, ask first — we're happy to advise on wording length, image quality, or coordinate formats before you pay."
+msgstr ""
+
+msgid "After ordering: order confirmations and shipping updates are sent to the email address you provide at checkout — please check your spam folder if you don't see them."
+msgstr ""
