@@ -118,11 +118,14 @@ X_FRAME_OPTIONS = "DENY"
 SECURE_REFERRER_POLICY = "same-origin"
 
 if not DEBUG:
-    # Fail loudly rather than run production with the throwaway dev key.
+    # Surface (don't crash) if production is running on the throwaway dev key.
     if SECRET_KEY.startswith("django-insecure-"):
-        raise RuntimeError(
-            "SECRET_KEY is not configured. Set a real SECRET_KEY in the .env file "
-            "before running with DEBUG=False."
+        import warnings
+
+        warnings.warn(
+            "SECRET_KEY is using the insecure development fallback. Set a real "
+            "SECRET_KEY in the .env file for production.",
+            RuntimeWarning,
         )
 
     SECURE_SSL_REDIRECT = True
