@@ -1,14 +1,15 @@
 {% extends "base.html" %}
-{% block title %}Terms of Service — DanielsPrints{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "Terms of Service" %} — DanielsPrints{% endblock %}
 {% block content %}
 <div class="container section" style="max-width:700px;">
-  <h2>Terms of Service</h2>
-  <p>By placing an order with DanielsPrints, you agree to the following terms:</p>
+  <h2>{% trans "Terms of Service" %}</h2>
+  <p>{% trans "By placing an order with DanielsPrints, you agree to the following terms:" %}</p>
   <ul>
-    <li>All products are made to order; production begins after payment is confirmed.</li>
-    <li>Custom text and designs are the responsibility of the customer — please review your order carefully before checkout.</li>
-    <li>We reserve the right to refuse orders containing offensive or illegal content.</li>
-    <li>Refunds are available for defective or damaged items; see our Shipping Info page for details.</li>
+    <li>{% trans "All products are made to order; production begins after payment is confirmed." %}</li>
+    <li>{% trans "Custom text and designs are the responsibility of the customer — please review your order carefully before checkout." %}</li>
+    <li>{% trans "We reserve the right to refuse orders containing offensive or illegal content." %}</li>
+    <li>{% trans "Refunds are available for defective or damaged items; see our Shipping Info page for details." %}</li>
   </ul>
 </div>
 {% endblock %}

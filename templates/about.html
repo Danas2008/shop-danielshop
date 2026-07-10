@@ -1,9 +1,10 @@
 {% extends "base.html" %}
-{% block title %}About — DanielsPrints{% endblock %}
+{% load i18n %}
+{% block title %}{% trans "About" %} — DanielsPrints{% endblock %}
 {% block content %}
 <div class="container section" style="max-width:700px;">
-  <h2>About DanielsPrints</h2>
-  <p>DanielsPrints creates 3D printed keepsake receipts that turn your milestone moments — anniversaries, first dates, new pets, new friendships — into a tangible, embossed memento. Every receipt is printed on demand and can be fully customized with our live builder.</p>
-  <p>We're a small, independent print shop focused on quality and quick turnaround.</p>
+  <h2>{% trans "About DanielsPrints" %}</h2>
+  <p>{% blocktrans %}DanielsPrints creates personalized 3D-printed keepsakes that turn your favourite moments — anniversaries, first dates, a special song, a meaningful place — into a tangible memento. Every piece is printed on demand and fully customized by you.{% endblocktrans %}</p>
+  <p>{% blocktrans %}We're a small, independent print shop focused on quality and quick turnaround.{% endblocktrans %}</p>
 </div>
 {% endblock %}

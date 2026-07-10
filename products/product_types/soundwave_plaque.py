@@ -2,23 +2,24 @@
 from decimal import Decimal
 
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 PRICE_CZK = Decimal("599")
 
 
 class SoundwavePlaqueForm(forms.Form):
-    audio_file = forms.FileField(label="Zvukový soubor (WAV, OGG, FLAC)", required=False)
+    audio_file = forms.FileField(label=_("Audio file (WAV, OGG, FLAC)"), required=False)
     manual_text = forms.CharField(
-        label="Vlastní text (pokud nenahráváte zvuk)", max_length=200, required=False
+        label=_("Custom text (if you're not uploading audio)"), max_length=200, required=False
     )
-    caption = forms.CharField(label="Popisek", max_length=100, required=False)
-    date = forms.CharField(label="Datum", max_length=20, required=False)
+    caption = forms.CharField(label=_("Caption"), max_length=100, required=False)
+    date = forms.CharField(label=_("Date"), max_length=20, required=False)
 
     def clean(self):
         cleaned = super().clean()
         if not cleaned.get("audio_file") and not cleaned.get("manual_text"):
             raise forms.ValidationError(
-                "Nahrajte prosím zvukový soubor, nebo zadejte vlastní text místo zvukové vlny."
+                _("Please upload an audio file, or enter custom text instead of a soundwave.")
             )
         return cleaned
 
@@ -33,10 +34,10 @@ CONFIG = {
     "form_class": SoundwavePlaqueForm,
     "price_func": calculate_price,
     "price_czk": PRICE_CZK,
-    "meta_title": "Plaketa se zvukovou vlnou | DanielsPrints",
-    "meta_description": (
-        "Proměňte hlasovou vzkaz, píseň nebo tlukot srdce ve vizuální zvukovou vlnu "
-        "vytištěnou na originální 3D plaketě."
+    "meta_title": _("Soundwave Plaque | DanielsPrints"),
+    "meta_description": _(
+        "Turn a voice message, song or heartbeat into a visual soundwave printed on a "
+        "unique 3D plaque."
     ),
     "preview_template": "products/product_types/soundwave_plaque_preview.html",
 }

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}{{ config.meta_title }}{% endblock %}
 
@@ -16,9 +16,8 @@
 <div class="container section">
   <div class="product-detail-layout">
     <div>
-      <h1>Zvuková vlna</h1>
-      <p>Nahrajte zvukový soubor (WAV, OGG nebo FLAC) a my z něj vygenerujeme zvukovou vlnu na plaketě.
-        Pokud zvuk nemáte, můžete místo něj zadat vlastní text. Cena {{ config.price_czk }} Kč.</p>
+      <h1>{% trans "Soundwave Plaque" %}</h1>
+      <p>{% blocktrans with price=config.price_czk %}Upload an audio file (WAV, OGG or FLAC) and we'll turn it into a soundwave on the plaque. If you don't have audio, you can enter your own text instead. Price {{ price }} Kč.{% endblocktrans %}</p>
 
       {% if form.non_field_errors %}
         <p style="color:#dc2626;">{{ form.non_field_errors }}</p>
@@ -43,12 +42,12 @@
           <label for="{{ form.date.id_for_label }}">{{ form.date.label }}</label>
           {{ form.date }}
         </div>
-        <button type="submit" class="btn btn-primary magnetic">Přidat do košíku — {{ config.price_czk }} Kč</button>
+        <button type="submit" class="btn btn-primary magnetic">{% blocktrans with price=config.price_czk %}Add to cart — {{ price }} Kč{% endblocktrans %}</button>
       </form>
     </div>
 
     <div>
-      <h2>Náhled</h2>
+      <h2>{% trans "Preview" %}</h2>
       {% if customization %}
       <div class="soundwave-card">
         {% if customization.waveform_svg %}
@@ -60,7 +59,7 @@
         {% if customization.date %}<div class="soundwave-date">{{ customization.date }}</div>{% endif %}
       </div>
       {% else %}
-      <img src="{% static 'images/products/soundwave_plaque.svg' %}" alt="Ukázka zvukové vlny" style="max-width:100%;border-radius:12px;">
+      <img src="{% static 'images/products/soundwave_plaque.svg' %}" alt="{% trans 'Soundwave plaque example' %}" style="max-width:100%;border-radius:12px;">
       {% endif %}
     </div>
   </div>

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}{{ config.meta_title }}{% endblock %}
 
@@ -16,11 +16,9 @@
 <div class="container section">
   <div class="product-detail-layout">
     <div>
-      <h1>Souřadnice</h1>
-      <p>Zadejte zeměpisnou šířku a délku místa, na kterém vám záleží. Souřadnice zadejte jako desetinná
-        čísla (např. 50.0755 pro šířku, 14.4378 pro délku). Cena {{ config.price_czk }} Kč.</p>
-      <p style="font-size:0.9rem;color:#6b7280;">Pozn.: interaktivní mapa s výběrem místa kliknutím je
-        plánované budoucí vylepšení — aktuálně se souřadnice zadávají ručně.</p>
+      <h1>{% trans "Coordinates Plaque" %}</h1>
+      <p>{% blocktrans with price=config.price_czk %}Enter the latitude and longitude of a place that matters to you. Type the coordinates as decimal numbers (e.g. 50.0755 for latitude, 14.4378 for longitude). Price {{ price }} Kč.{% endblocktrans %}</p>
+      <p style="font-size:0.9rem;color:#6b7280;">{% trans "Note: an interactive click-to-pick map is a planned future enhancement — for now the coordinates are entered manually." %}</p>
 
       {% if form.non_field_errors %}
         <p style="color:#dc2626;">{{ form.non_field_errors }}</p>
@@ -54,12 +52,12 @@
           <label for="{{ form.caption.id_for_label }}">{{ form.caption.label }}</label>
           {{ form.caption }}
         </div>
-        <button type="submit" class="btn btn-primary magnetic">Přidat do košíku — {{ config.price_czk }} Kč</button>
+        <button type="submit" class="btn btn-primary magnetic">{% blocktrans with price=config.price_czk %}Add to cart — {{ price }} Kč{% endblocktrans %}</button>
       </form>
     </div>
 
     <div>
-      <h2>Náhled</h2>
+      <h2>{% trans "Preview" %}</h2>
       {% if customization %}
       <div class="gps-card">
         <svg viewBox="0 0 24 24" width="40" class="gps-pin"><path fill="currentColor" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 8 12 8 12s8-6.6 8-12c0-4.4-3.6-8-8-8zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/></svg>
@@ -71,7 +69,7 @@
         {% if customization.caption %}<div class="gps-caption">{{ customization.caption }}</div>{% endif %}
       </div>
       {% else %}
-      <img src="{% static 'images/products/gps_plaque.svg' %}" alt="Ukázka plakety se souřadnicemi" style="max-width:100%;border-radius:12px;">
+      <img src="{% static 'images/products/gps_plaque.svg' %}" alt="{% trans 'Coordinates plaque example' %}" style="max-width:100%;border-radius:12px;">
       {% endif %}
     </div>
   </div>

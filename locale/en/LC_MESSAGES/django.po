@@ -1,0 +1,468 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DanielsPrints\n"
+"Report-Msgid-Bugs-To: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "(shipping billed separately)"
+msgstr ""
+
+msgid "A favourite song, framed with a scannable Spotify code."
+msgstr ""
+
+msgid "A little note..."
+msgstr ""
+
+msgid "A personalized music plaque with album art, names and a scannable Spotify code. Give a favourite song as a 3D-printed keepsake."
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "About DanielsPrints"
+msgstr ""
+
+msgid "Add fridge magnets"
+msgstr ""
+
+msgid "Add to Cart"
+msgstr ""
+
+msgid "Add to cart — %(price)s Kč"
+msgstr ""
+
+msgid "Added to cart!"
+msgstr ""
+
+msgid "After you fill in and submit the form, you'll see the plaque in your cart. The Spotify code preview is generated automatically from a valid track link."
+msgstr ""
+
+msgid "Album art"
+msgstr ""
+
+msgid "Album art (optional)"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "All products are made to order; production begins after payment is confirmed."
+msgstr ""
+
+msgid "All rights reserved."
+msgstr ""
+
+msgid "Artist"
+msgstr ""
+
+msgid "Audio file (WAV, OGG, FLAC)"
+msgstr ""
+
+msgid "Back to Home"
+msgstr ""
+
+msgid "Blank / Custom"
+msgstr ""
+
+msgid "Browse the shop"
+msgstr ""
+
+msgid "Build Your Own Receipt"
+msgstr ""
+
+msgid "Build your own"
+msgstr ""
+
+msgid "Builder"
+msgstr ""
+
+msgid "By placing an order with DanielsPrints, you agree to the following terms:"
+msgstr ""
+
+msgid "Caption"
+msgstr ""
+
+msgid "Caption (optional)"
+msgstr ""
+
+msgid "Cart"
+msgstr ""
+
+msgid "Checkout"
+msgstr ""
+
+msgid "City"
+msgstr ""
+
+msgid "Contact"
+msgstr ""
+
+msgid "Contact Us"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgid "Continue to Payment"
+msgstr ""
+
+msgid "Coordinates Plaque"
+msgstr ""
+
+msgid "Coordinates Plaque of a Place | DanielsPrints"
+msgstr ""
+
+msgid "Coordinates plaque example"
+msgstr ""
+
+msgid "Country"
+msgstr ""
+
+msgid "Custom Receipt Builder"
+msgstr ""
+
+msgid "Custom Receipt Plaque | DanielsPrints"
+msgstr ""
+
+msgid "Custom message"
+msgstr ""
+
+msgid "Custom text (if you're not uploading audio)"
+msgstr ""
+
+msgid "Custom text and designs are the responsibility of the customer — please review your order carefully before checkout."
+msgstr ""
+
+msgid "DanielsPrints creates personalized 3D-printed keepsakes that turn your favourite moments — anniversaries, first dates, a special song, a meaningful place — into a tangible memento. Every piece is printed on demand and fully customized by you."
+msgstr ""
+
+msgid "DanielsPrints — Personalized 3D-printed gifts"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Design your own 3D-printed receipt-shaped plaque with custom text and date — a unique keepsake gift made to order."
+msgstr ""
+
+msgid "Design your own receipt plaque"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Enter the latitude and longitude of a place that matters to you. Type the coordinates as decimal numbers (e.g. 50.0755 for latitude, 14.4378 for longitude). Price %(price)s Kč."
+msgstr ""
+
+msgid "Enter the song, the names and a Spotify link. A preview is generated below — once you submit the form we add the plaque to your cart for %(price)s Kč."
+msgstr ""
+
+msgid "Explore the gifts"
+msgstr ""
+
+msgid "Full control over the store name, items, message and size — with a live preview as you type."
+msgstr ""
+
+msgid "Full name"
+msgstr ""
+
+msgid "Height"
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "If your item arrives damaged, contact us within 7 days for a free replacement."
+msgstr ""
+
+msgid "Immortalise a meaningful place — enter its GPS coordinates and create a unique 3D-printed plaque with names and a date."
+msgstr ""
+
+msgid "Immortalise a special place by its GPS coordinates."
+msgstr ""
+
+msgid "Invalid Spotify track link. Please paste a link in the form https://open.spotify.com/track/…"
+msgstr ""
+
+msgid "Item name"
+msgstr ""
+
+msgid "Items"
+msgstr ""
+
+msgid "Large (8×18cm) — %(p)s Kč"
+msgstr ""
+
+msgid "Large (8×18cm) — 500 Kč"
+msgstr ""
+
+msgid "Latitude"
+msgstr ""
+
+msgid "Longitude"
+msgstr ""
+
+msgid "Message"
+msgstr ""
+
+msgid "Music Plaque"
+msgstr ""
+
+msgid "Music Plaque with Spotify Code | DanielsPrints"
+msgstr ""
+
+msgid "Music plaque example"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Name / text line 1"
+msgstr ""
+
+msgid "Name / text line 2"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "No products found."
+msgstr ""
+
+msgid "Note: an interactive click-to-pick map is a planned future enhancement — for now the coordinates are entered manually."
+msgstr ""
+
+msgid "Open the builder"
+msgstr ""
+
+msgid "Order %(oid)s"
+msgstr ""
+
+msgid "Order Confirmed"
+msgstr ""
+
+msgid "Order Summary"
+msgstr ""
+
+msgid "Orders are printed to order and typically ship within 3–5 business days. Shipping cost is calculated and billed separately after we confirm your order — we'll reach out within 24 hours with a shipping quote based on your location."
+msgstr ""
+
+msgid "Our personalized plaques"
+msgstr ""
+
+msgid "Page %(num)s of %(total)s"
+msgstr ""
+
+msgid "Payment details are processed directly by Stripe; we never see or store your card information."
+msgstr ""
+
+msgid "Personalized 3D-printed gifts, made to remember"
+msgstr ""
+
+msgid "Phone"
+msgstr ""
+
+msgid "Please upload an audio file, or enter custom text instead of a soundwave."
+msgstr ""
+
+msgid "Postal code"
+msgstr ""
+
+msgid "Prev"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "Price"
+msgstr ""
+
+msgid "Privacy Policy"
+msgstr ""
+
+msgid "Product"
+msgstr ""
+
+msgid "Qty"
+msgstr ""
+
+msgid "Receipt Plaque"
+msgstr ""
+
+msgid "Recipient name"
+msgstr ""
+
+msgid "Refunds are available for defective or damaged items; see our Shipping Info page for details."
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Secure payment powered by Stripe. Your card details never touch our servers."
+msgstr ""
+
+msgid "Send"
+msgstr ""
+
+msgid "Shipping & returns"
+msgstr ""
+
+msgid "Shipping Info"
+msgstr ""
+
+msgid "Shipping address"
+msgstr ""
+
+msgid "Shipping calculated at checkout."
+msgstr ""
+
+msgid "Shop"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Song name"
+msgstr ""
+
+msgid "Soundwave Plaque"
+msgstr ""
+
+msgid "Soundwave Plaque | DanielsPrints"
+msgstr ""
+
+msgid "Soundwave plaque example"
+msgstr ""
+
+msgid "Spotify code"
+msgstr ""
+
+msgid "Spotify track link"
+msgstr ""
+
+msgid "Standard (8×12cm) — %(p)s Kč"
+msgstr ""
+
+msgid "Standard (8×12cm) — 400 Kč"
+msgstr ""
+
+msgid "Start from a template"
+msgstr ""
+
+msgid "Status:"
+msgstr ""
+
+msgid "Store name"
+msgstr ""
+
+msgid "Subtotal:"
+msgstr ""
+
+msgid "TOTAL"
+msgstr ""
+
+msgid "Terms of Service"
+msgstr ""
+
+msgid "Thank you, %(name)s!"
+msgstr ""
+
+msgid "Thanks for reaching out! We'll get back to you within 24 hours."
+msgstr ""
+
+msgid "The audio file is too large. The maximum size is 20 MB."
+msgstr ""
+
+msgid "The audio recording is too long. The maximum length is %(secs)s seconds."
+msgstr ""
+
+msgid "The custom builder product is not configured yet — contact the shop owner."
+msgstr ""
+
+msgid "The file could not be read as audio. Please upload a valid WAV, OGG or FLAC file."
+msgstr ""
+
+msgid "The file is not a valid image. Please upload a JPG, PNG or WEBP."
+msgstr ""
+
+msgid "The image is too large. The maximum size is 5 MB."
+msgstr ""
+
+msgid "Toggle navigation menu"
+msgstr ""
+
+msgid "Total:"
+msgstr ""
+
+msgid "Turn a voice message or song into a printed soundwave."
+msgstr ""
+
+msgid "Turn a voice message, song or heartbeat into a visual soundwave printed on a unique 3D plaque."
+msgstr ""
+
+msgid "Turn your favourite moments — a song, a place, a milestone — into a custom 3D-printed keepsake, designed by you and shipped to your door."
+msgstr ""
+
+msgid "Turn your plaque into a fridge magnet — +%(p)s Kč"
+msgstr ""
+
+msgid "Turn your plaque into a fridge magnet — +49 Kč"
+msgstr ""
+
+msgid "Unsupported audio format. Please upload a file in WAV, OGG or FLAC format (MP3 and M4A are not supported)."
+msgstr ""
+
+msgid "Unsupported audio format. Please upload a file in WAV, OGG or FLAC format."
+msgstr ""
+
+msgid "Upload an audio file (WAV, OGG or FLAC) and we'll turn it into a soundwave on the plaque. If you don't have audio, you can enter your own text instead. Price %(price)s Kč."
+msgstr ""
+
+msgid "We collect the information you provide at checkout (name, email, phone, shipping address) solely to fulfill your order and communicate with you about it."
+msgstr ""
+
+msgid "We do not sell or share your personal data with third parties beyond what's required to ship your order."
+msgstr ""
+
+msgid "We reserve the right to refuse orders containing offensive or illegal content."
+msgstr ""
+
+msgid "We'll contact you within 24h to confirm details and shipping."
+msgstr ""
+
+msgid "We're a small, independent print shop focused on quality and quick turnaround."
+msgstr ""
+
+msgid "YOUR STORE"
+msgstr ""
+
+msgid "You might also like"
+msgstr ""
+
+msgid "Your Cart"
+msgstr ""
+
+msgid "Your cart is empty."
+msgstr ""
+
+msgid "Your milestone moment as a 3D-printed keepsake receipt."
+msgstr ""
+
+msgid "Your name"
+msgstr ""
+
+msgid "Your order <strong>%(oid)s</strong> has been received."
+msgstr ""
+
+msgid "e.g. THE HAVLICEKS"
+msgstr ""
+
+msgid "from"
+msgstr ""
+
+msgid "magnets"
+msgstr ""

@@ -12,6 +12,7 @@ import uuid
 from django.core.exceptions import ValidationError
 from django.core.files.base import ContentFile
 from django.core.files.storage import default_storage
+from django.utils.translation import gettext as _
 
 MAX_IMAGE_BYTES = 5 * 1024 * 1024  # 5MB
 MAX_AUDIO_BYTES = 20 * 1024 * 1024  # 20MB
@@ -34,7 +35,7 @@ def validate_and_store_image(uploaded_file):
     from PIL import Image, UnidentifiedImageError
 
     if uploaded_file.size > MAX_IMAGE_BYTES:
-        raise ValidationError("Obrázek je příliš velký. Maximální velikost je 5 MB.")
+        raise ValidationError(_("The image is too large. The maximum size is 5 MB."))
 
     uploaded_file.seek(0)
     raw = uploaded_file.read()
@@ -47,7 +48,7 @@ def validate_and_store_image(uploaded_file):
         image = Image.open(io.BytesIO(raw))
         image.load()
     except (UnidentifiedImageError, OSError, ValueError):
-        raise ValidationError("Soubor není platný obrázek. Nahrajte prosím JPG, PNG nebo WEBP.")
+        raise ValidationError(_("The file is not a valid image. Please upload a JPG, PNG or WEBP."))
 
     if image.mode in ("RGBA", "P"):
         image = image.convert("RGBA")
@@ -78,14 +79,16 @@ def validate_and_read_audio(uploaded_file):
     import soundfile as sf
 
     if uploaded_file.size > MAX_AUDIO_BYTES:
-        raise ValidationError("Zvukový soubor je příliš velký. Maximální velikost je 20 MB.")
+        raise ValidationError(_("The audio file is too large. The maximum size is 20 MB."))
 
     name = getattr(uploaded_file, "name", "") or ""
     ext = os.path.splitext(name)[1].lower()
     if ext not in (".wav", ".ogg", ".flac"):
         raise ValidationError(
-            "Nepodporovaný formát zvuku. Nahrajte prosím soubor ve formátu WAV, OGG nebo FLAC "
-            "(MP3 a M4A nejsou podporovány)."
+            _(
+                "Unsupported audio format. Please upload a file in WAV, OGG or FLAC format "
+                "(MP3 and M4A are not supported)."
+            )
         )
 
     uploaded_file.seek(0)
@@ -96,12 +99,13 @@ def validate_and_read_audio(uploaded_file):
         with sf.SoundFile(io.BytesIO(raw)) as f:
             if f.format not in ALLOWED_AUDIO_FORMATS:
                 raise ValidationError(
-                    "Nepodporovaný formát zvuku. Nahrajte prosím soubor ve formátu WAV, OGG nebo FLAC."
+                    _("Unsupported audio format. Please upload a file in WAV, OGG or FLAC format.")
                 )
             duration = len(f) / float(f.samplerate)
             if duration > MAX_AUDIO_SECONDS:
                 raise ValidationError(
-                    f"Zvuková nahrávka je příliš dlouhá. Maximální délka je {MAX_AUDIO_SECONDS} sekund."
+                    _("The audio recording is too long. The maximum length is %(secs)s seconds.")
+                    % {"secs": MAX_AUDIO_SECONDS}
                 )
             samples = f.read(dtype="float32", always_2d=True)
             samplerate = f.samplerate
@@ -109,7 +113,7 @@ def validate_and_read_audio(uploaded_file):
         raise
     except Exception:
         raise ValidationError(
-            "Soubor se nepodařilo přečíst jako zvuk. Nahrajte prosím platný WAV, OGG nebo FLAC soubor."
+            _("The file could not be read as audio. Please upload a valid WAV, OGG or FLAC file.")
         )
 
     # Downmix to mono.

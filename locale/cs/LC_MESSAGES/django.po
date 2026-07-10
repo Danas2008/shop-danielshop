@@ -1,0 +1,468 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DanielsPrints\n"
+"Report-Msgid-Bugs-To: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: cs\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "(shipping billed separately)"
+msgstr "(poštovné účtováno zvlášť)"
+
+msgid "A favourite song, framed with a scannable Spotify code."
+msgstr "Oblíbená písnička s naskenovatelným Spotify kódem."
+
+msgid "A little note..."
+msgstr "Malý vzkaz..."
+
+msgid "A personalized music plaque with album art, names and a scannable Spotify code. Give a favourite song as a 3D-printed keepsake."
+msgstr "Originální hudební plaketa s obalem alba, jmény a naskenovatelným Spotify kódem. Darujte oblíbenou písničku jako 3D tištěný dárek."
+
+msgid "About"
+msgstr "O nás"
+
+msgid "About DanielsPrints"
+msgstr "O DanielsPrints"
+
+msgid "Add fridge magnets"
+msgstr "Přidat magnety na lednici"
+
+msgid "Add to Cart"
+msgstr "Přidat do košíku"
+
+msgid "Add to cart — %(price)s Kč"
+msgstr "Přidat do košíku — %(price)s Kč"
+
+msgid "Added to cart!"
+msgstr "Přidáno do košíku!"
+
+msgid "After you fill in and submit the form, you'll see the plaque in your cart. The Spotify code preview is generated automatically from a valid track link."
+msgstr "Po vyplnění a odeslání formuláře uvidíte plaketu v košíku. Náhled Spotify kódu se vygeneruje automaticky z platného odkazu na skladbu."
+
+msgid "Album art"
+msgstr "Obal alba"
+
+msgid "Album art (optional)"
+msgstr "Obal alba (volitelné)"
+
+msgid "All"
+msgstr "Vše"
+
+msgid "All products are made to order; production begins after payment is confirmed."
+msgstr "Všechny produkty se vyrábějí na zakázku; výroba začíná po potvrzení platby."
+
+msgid "All rights reserved."
+msgstr "Všechna práva vyhrazena."
+
+msgid "Artist"
+msgstr "Interpret"
+
+msgid "Audio file (WAV, OGG, FLAC)"
+msgstr "Zvukový soubor (WAV, OGG, FLAC)"
+
+msgid "Back to Home"
+msgstr "Zpět na úvod"
+
+msgid "Blank / Custom"
+msgstr "Prázdné / Vlastní"
+
+msgid "Browse the shop"
+msgstr "Prohlédnout obchod"
+
+msgid "Build Your Own Receipt"
+msgstr "Vytvořte si vlastní účtenku"
+
+msgid "Build your own"
+msgstr "Vytvořte si vlastní"
+
+msgid "Builder"
+msgstr "Návrhář"
+
+msgid "By placing an order with DanielsPrints, you agree to the following terms:"
+msgstr "Odesláním objednávky u DanielsPrints souhlasíte s následujícími podmínkami:"
+
+msgid "Caption"
+msgstr "Popisek"
+
+msgid "Caption (optional)"
+msgstr "Popisek (volitelné)"
+
+msgid "Cart"
+msgstr "Košík"
+
+msgid "Checkout"
+msgstr "Pokladna"
+
+msgid "City"
+msgstr "Město"
+
+msgid "Contact"
+msgstr "Kontakt"
+
+msgid "Contact Us"
+msgstr "Kontaktujte nás"
+
+msgid "Contact us"
+msgstr "Kontaktujte nás"
+
+msgid "Continue to Payment"
+msgstr "Pokračovat k platbě"
+
+msgid "Coordinates Plaque"
+msgstr "Plaketa se souřadnicemi"
+
+msgid "Coordinates Plaque of a Place | DanielsPrints"
+msgstr "Plaketa se souřadnicemi místa | DanielsPrints"
+
+msgid "Coordinates plaque example"
+msgstr "Ukázka plakety se souřadnicemi"
+
+msgid "Country"
+msgstr "Země"
+
+msgid "Custom Receipt Builder"
+msgstr "Návrhář vlastní účtenky"
+
+msgid "Custom Receipt Plaque | DanielsPrints"
+msgstr "Účtenková plaketa na míru | DanielsPrints"
+
+msgid "Custom message"
+msgstr "Vlastní zpráva"
+
+msgid "Custom text (if you're not uploading audio)"
+msgstr "Vlastní text (pokud nenahráváte zvuk)"
+
+msgid "Custom text and designs are the responsibility of the customer — please review your order carefully before checkout."
+msgstr "Za vlastní text a návrhy zodpovídá zákazník — před dokončením objednávky ji prosím pečlivě zkontrolujte."
+
+msgid "DanielsPrints creates personalized 3D-printed keepsakes that turn your favourite moments — anniversaries, first dates, a special song, a meaningful place — into a tangible memento. Every piece is printed on demand and fully customized by you."
+msgstr "DanielsPrints vytváří personalizované 3D tištěné památky, které promění vaše oblíbené okamžiky — výročí, první rande, oblíbenou písničku, důležité místo — v hmatatelnou vzpomínku. Každý kus tiskneme na zakázku a plně si jej přizpůsobíte."
+
+msgid "DanielsPrints — Personalized 3D-printed gifts"
+msgstr "DanielsPrints — Personalizované 3D tištěné dárky"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Design your own 3D-printed receipt-shaped plaque with custom text and date — a unique keepsake gift made to order."
+msgstr "Navrhněte si vlastní 3D tištěnou plaketu ve tvaru účtenky s vlastním textem a datem — originální dárek na míru."
+
+msgid "Design your own receipt plaque"
+msgstr "Navrhněte si vlastní účtenkovou plaketu"
+
+msgid "Email"
+msgstr "E-mail"
+
+msgid "Enter the latitude and longitude of a place that matters to you. Type the coordinates as decimal numbers (e.g. 50.0755 for latitude, 14.4378 for longitude). Price %(price)s Kč."
+msgstr "Zadejte zeměpisnou šířku a délku místa, na kterém vám záleží. Souřadnice zadejte jako desetinná čísla (např. 50.0755 pro šířku, 14.4378 pro délku). Cena %(price)s Kč."
+
+msgid "Enter the song, the names and a Spotify link. A preview is generated below — once you submit the form we add the plaque to your cart for %(price)s Kč."
+msgstr "Zadejte skladbu, jména a odkaz na Spotify. Náhled se vygeneruje níže — po odeslání formuláře přidáme plaketu do košíku s cenou %(price)s Kč."
+
+msgid "Explore the gifts"
+msgstr "Prohlédnout dárky"
+
+msgid "Full control over the store name, items, message and size — with a live preview as you type."
+msgstr "Plná kontrola nad názvem obchodu, položkami, zprávou a velikostí — se živým náhledem během psaní."
+
+msgid "Full name"
+msgstr "Celé jméno"
+
+msgid "Height"
+msgstr "Výška"
+
+msgid "Home"
+msgstr "Úvod"
+
+msgid "If your item arrives damaged, contact us within 7 days for a free replacement."
+msgstr "Pokud vám zásilka dorazí poškozená, kontaktujte nás do 7 dnů a zajistíme bezplatnou náhradu."
+
+msgid "Immortalise a meaningful place — enter its GPS coordinates and create a unique 3D-printed plaque with names and a date."
+msgstr "Zvěčněte důležité místo — zadejte jeho GPS souřadnice a vytvořte originální 3D tištěnou plaketu se jmény a datem."
+
+msgid "Immortalise a special place by its GPS coordinates."
+msgstr "Zvěčněte výjimečné místo jeho GPS souřadnicemi."
+
+msgid "Invalid Spotify track link. Please paste a link in the form https://open.spotify.com/track/…"
+msgstr "Neplatný odkaz na skladbu Spotify. Vložte prosím odkaz ve tvaru https://open.spotify.com/track/…"
+
+msgid "Item name"
+msgstr "Název položky"
+
+msgid "Items"
+msgstr "Položky"
+
+msgid "Large (8×18cm) — %(p)s Kč"
+msgstr "Velká (8×18 cm) — %(p)s Kč"
+
+msgid "Large (8×18cm) — 500 Kč"
+msgstr "Velká (8×18 cm) — 500 Kč"
+
+msgid "Latitude"
+msgstr "Zeměpisná šířka"
+
+msgid "Longitude"
+msgstr "Zeměpisná délka"
+
+msgid "Message"
+msgstr "Zpráva"
+
+msgid "Music Plaque"
+msgstr "Hudební plaketa"
+
+msgid "Music Plaque with Spotify Code | DanielsPrints"
+msgstr "Hudební plaketa se Spotify kódem | DanielsPrints"
+
+msgid "Music plaque example"
+msgstr "Ukázka hudební plakety"
+
+msgid "Name"
+msgstr "Jméno"
+
+msgid "Name / text line 1"
+msgstr "Jméno / text řádek 1"
+
+msgid "Name / text line 2"
+msgstr "Jméno / text řádek 2"
+
+msgid "Next"
+msgstr "Další"
+
+msgid "No products found."
+msgstr "Nebyly nalezeny žádné produkty."
+
+msgid "Note: an interactive click-to-pick map is a planned future enhancement — for now the coordinates are entered manually."
+msgstr "Pozn.: interaktivní mapa s výběrem místa kliknutím je plánované budoucí vylepšení — aktuálně se souřadnice zadávají ručně."
+
+msgid "Open the builder"
+msgstr "Otevřít návrhář"
+
+msgid "Order %(oid)s"
+msgstr "Objednávka %(oid)s"
+
+msgid "Order Confirmed"
+msgstr "Objednávka potvrzena"
+
+msgid "Order Summary"
+msgstr "Souhrn objednávky"
+
+msgid "Orders are printed to order and typically ship within 3–5 business days. Shipping cost is calculated and billed separately after we confirm your order — we'll reach out within 24 hours with a shipping quote based on your location."
+msgstr "Objednávky tiskneme na zakázku a obvykle odesíláme do 3–5 pracovních dnů. Cena poštovného se počítá a účtuje zvlášť po potvrzení objednávky — do 24 hodin se vám ozveme s cenou dopravy podle vaší lokality."
+
+msgid "Our personalized plaques"
+msgstr "Naše personalizované plakety"
+
+msgid "Page %(num)s of %(total)s"
+msgstr "Strana %(num)s z %(total)s"
+
+msgid "Payment details are processed directly by Stripe; we never see or store your card information."
+msgstr "Platební údaje zpracovává přímo Stripe; údaje o vaší kartě nikdy nevidíme ani neukládáme."
+
+msgid "Personalized 3D-printed gifts, made to remember"
+msgstr "Personalizované 3D tištěné dárky, na které se nezapomíná"
+
+msgid "Phone"
+msgstr "Telefon"
+
+msgid "Please upload an audio file, or enter custom text instead of a soundwave."
+msgstr "Nahrajte prosím zvukový soubor, nebo zadejte vlastní text místo zvukové vlny."
+
+msgid "Postal code"
+msgstr "PSČ"
+
+msgid "Prev"
+msgstr "Předchozí"
+
+msgid "Preview"
+msgstr "Náhled"
+
+msgid "Price"
+msgstr "Cena"
+
+msgid "Privacy Policy"
+msgstr "Zásady ochrany osobních údajů"
+
+msgid "Product"
+msgstr "Produkt"
+
+msgid "Qty"
+msgstr "Množství"
+
+msgid "Receipt Plaque"
+msgstr "Účtenková plaketa"
+
+msgid "Recipient name"
+msgstr "Jméno příjemce"
+
+msgid "Refunds are available for defective or damaged items; see our Shipping Info page for details."
+msgstr "Vrácení peněz je možné u vadných nebo poškozených výrobků; podrobnosti najdete na stránce Informace o dopravě."
+
+msgid "Remove"
+msgstr "Odebrat"
+
+msgid "Secure payment powered by Stripe. Your card details never touch our servers."
+msgstr "Bezpečná platba přes Stripe. Údaje o vaší kartě se nikdy nedostanou na naše servery."
+
+msgid "Send"
+msgstr "Odeslat"
+
+msgid "Shipping & returns"
+msgstr "Doprava a vrácení"
+
+msgid "Shipping Info"
+msgstr "Informace o dopravě"
+
+msgid "Shipping address"
+msgstr "Doručovací adresa"
+
+msgid "Shipping calculated at checkout."
+msgstr "Poštovné se vypočítá u pokladny."
+
+msgid "Shop"
+msgstr "Obchod"
+
+msgid "Size"
+msgstr "Velikost"
+
+msgid "Song name"
+msgstr "Název skladby"
+
+msgid "Soundwave Plaque"
+msgstr "Plaketa se zvukovou vlnou"
+
+msgid "Soundwave Plaque | DanielsPrints"
+msgstr "Plaketa se zvukovou vlnou | DanielsPrints"
+
+msgid "Soundwave plaque example"
+msgstr "Ukázka zvukové vlny"
+
+msgid "Spotify code"
+msgstr "Spotify kód"
+
+msgid "Spotify track link"
+msgstr "Odkaz na skladbu Spotify"
+
+msgid "Standard (8×12cm) — %(p)s Kč"
+msgstr "Standardní (8×12 cm) — %(p)s Kč"
+
+msgid "Standard (8×12cm) — 400 Kč"
+msgstr "Standardní (8×12 cm) — 400 Kč"
+
+msgid "Start from a template"
+msgstr "Začít ze šablony"
+
+msgid "Status:"
+msgstr "Stav:"
+
+msgid "Store name"
+msgstr "Název obchodu"
+
+msgid "Subtotal:"
+msgstr "Mezisoučet:"
+
+msgid "TOTAL"
+msgstr "CELKEM"
+
+msgid "Terms of Service"
+msgstr "Obchodní podmínky"
+
+msgid "Thank you, %(name)s!"
+msgstr "Děkujeme, %(name)s!"
+
+msgid "Thanks for reaching out! We'll get back to you within 24 hours."
+msgstr "Děkujeme za zprávu! Ozveme se vám do 24 hodin."
+
+msgid "The audio file is too large. The maximum size is 20 MB."
+msgstr "Zvukový soubor je příliš velký. Maximální velikost je 20 MB."
+
+msgid "The audio recording is too long. The maximum length is %(secs)s seconds."
+msgstr "Zvuková nahrávka je příliš dlouhá. Maximální délka je %(secs)s sekund."
+
+msgid "The custom builder product is not configured yet — contact the shop owner."
+msgstr "Produkt vlastního návrháře zatím není nastaven — kontaktujte prosím majitele obchodu."
+
+msgid "The file could not be read as audio. Please upload a valid WAV, OGG or FLAC file."
+msgstr "Soubor se nepodařilo přečíst jako zvuk. Nahrajte prosím platný WAV, OGG nebo FLAC soubor."
+
+msgid "The file is not a valid image. Please upload a JPG, PNG or WEBP."
+msgstr "Soubor není platný obrázek. Nahrajte prosím JPG, PNG nebo WEBP."
+
+msgid "The image is too large. The maximum size is 5 MB."
+msgstr "Obrázek je příliš velký. Maximální velikost je 5 MB."
+
+msgid "Toggle navigation menu"
+msgstr "Přepnout navigační menu"
+
+msgid "Total:"
+msgstr "Celkem:"
+
+msgid "Turn a voice message or song into a printed soundwave."
+msgstr "Proměňte hlasový vzkaz nebo píseň ve vytištěnou zvukovou vlnu."
+
+msgid "Turn a voice message, song or heartbeat into a visual soundwave printed on a unique 3D plaque."
+msgstr "Proměňte hlasový vzkaz, píseň nebo tlukot srdce ve vizuální zvukovou vlnu vytištěnou na originální 3D plaketě."
+
+msgid "Turn your favourite moments — a song, a place, a milestone — into a custom 3D-printed keepsake, designed by you and shipped to your door."
+msgstr "Proměňte své oblíbené okamžiky — píseň, místo, výročí — v 3D tištěnou památku na míru, kterou si navrhnete sami a doručíme vám ji až domů."
+
+msgid "Turn your plaque into a fridge magnet — +%(p)s Kč"
+msgstr "Proměňte plaketu v magnet na lednici — +%(p)s Kč"
+
+msgid "Turn your plaque into a fridge magnet — +49 Kč"
+msgstr "Proměňte plaketu v magnet na lednici — +49 Kč"
+
+msgid "Unsupported audio format. Please upload a file in WAV, OGG or FLAC format (MP3 and M4A are not supported)."
+msgstr "Nepodporovaný formát zvuku. Nahrajte prosím soubor ve formátu WAV, OGG nebo FLAC (MP3 a M4A nejsou podporovány)."
+
+msgid "Unsupported audio format. Please upload a file in WAV, OGG or FLAC format."
+msgstr "Nepodporovaný formát zvuku. Nahrajte prosím soubor ve formátu WAV, OGG nebo FLAC."
+
+msgid "Upload an audio file (WAV, OGG or FLAC) and we'll turn it into a soundwave on the plaque. If you don't have audio, you can enter your own text instead. Price %(price)s Kč."
+msgstr "Nahrajte zvukový soubor (WAV, OGG nebo FLAC) a my z něj vygenerujeme zvukovou vlnu na plaketě. Pokud zvuk nemáte, můžete místo něj zadat vlastní text. Cena %(price)s Kč."
+
+msgid "We collect the information you provide at checkout (name, email, phone, shipping address) solely to fulfill your order and communicate with you about it."
+msgstr "Údaje, které zadáte u pokladny (jméno, e-mail, telefon, doručovací adresa), shromažďujeme výhradně za účelem vyřízení vaší objednávky a komunikace o ní."
+
+msgid "We do not sell or share your personal data with third parties beyond what's required to ship your order."
+msgstr "Vaše osobní údaje neprodáváme ani nesdílíme se třetími stranami nad rámec toho, co je nezbytné k doručení vaší objednávky."
+
+msgid "We reserve the right to refuse orders containing offensive or illegal content."
+msgstr "Vyhrazujeme si právo odmítnout objednávky obsahující urážlivý nebo nezákonný obsah."
+
+msgid "We'll contact you within 24h to confirm details and shipping."
+msgstr "Do 24 hodin vás budeme kontaktovat kvůli potvrzení detailů a dopravy."
+
+msgid "We're a small, independent print shop focused on quality and quick turnaround."
+msgstr "Jsme malá nezávislá tiskárna zaměřená na kvalitu a rychlé dodání."
+
+msgid "YOUR STORE"
+msgstr "VÁŠ OBCHOD"
+
+msgid "You might also like"
+msgstr "Mohlo by se vám také líbit"
+
+msgid "Your Cart"
+msgstr "Váš košík"
+
+msgid "Your cart is empty."
+msgstr "Váš košík je prázdný."
+
+msgid "Your milestone moment as a 3D-printed keepsake receipt."
+msgstr "Váš důležitý okamžik jako 3D tištěná účtenka na památku."
+
+msgid "Your name"
+msgstr "Vaše jméno"
+
+msgid "Your order <strong>%(oid)s</strong> has been received."
+msgstr "Vaše objednávka <strong>%(oid)s</strong> byla přijata."
+
+msgid "e.g. THE HAVLICEKS"
+msgstr "např. HAVLÍČKOVI"
+
+msgid "from"
+msgstr "od"
+
+msgid "magnets"
+msgstr "magnety"

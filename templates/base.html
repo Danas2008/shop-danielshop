@@ -1,13 +1,18 @@
-{% load static %}
+{% load static i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ LANGUAGE_CODE }}">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{% block title %}DanielsPrints — 3D Printed Receipts{% endblock %}</title>
+  <title>{% block title %}{% trans "DanielsPrints — Personalized 3D-printed gifts" %}{% endblock %}</title>
   {% block meta_description %}{% endblock %}
   {% block og_tags %}{% endblock %}
+  {% for alt in i18n_alternates %}
+  <link rel="alternate" hreflang="{{ alt.code }}" href="{{ alt.absolute_url }}">
+  {% endfor %}
   <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="icon" href="{% static 'images/logo.svg' %}" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
   {% block extra_head %}{% endblock %}
@@ -15,18 +20,24 @@
 <body>
   <nav class="navbar">
     <a href="{% url 'home' %}"><img src="{% static 'images/logo.svg' %}" alt="DanielsPrints" class="logo"></a>
-    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-links">
+    <button type="button" class="nav-toggle" id="nav-toggle" aria-label="{% trans 'Toggle navigation menu' %}" aria-expanded="false" aria-controls="nav-links">
       <span></span>
     </button>
     <div class="nav-links" id="nav-links">
-      <a href="{% url 'home' %}">Home</a>
-      <a href="{% url 'products:list' %}">Shop</a>
-      <a href="{% url 'builder:index' %}">Builder</a>
-      <a href="{% url 'about' %}">About</a>
-      <a href="{% url 'contact' %}">Contact</a>
+      <a href="{% url 'home' %}">{% trans "Home" %}</a>
+      <a href="{% url 'products:list' %}">{% trans "Shop" %}</a>
+      <a href="{% url 'builder:index' %}">{% trans "Builder" %}</a>
+      <a href="{% url 'about' %}">{% trans "About" %}</a>
+      <a href="{% url 'contact' %}">{% trans "Contact" %}</a>
       <a href="{% url 'cart:detail' %}" class="cart-link">
-        Cart{% if cart_count %}<span class="cart-badge">{{ cart_count }}</span>{% endif %}
+        {% trans "Cart" %}{% if cart_count %}<span class="cart-badge">{{ cart_count }}</span>{% endif %}
       </a>
+      <form action="{% url 'set_language' %}" method="post" class="lang-switch">
+        {% csrf_token %}
+        <input name="next" type="hidden" value="{{ request.get_full_path }}">
+        <button type="submit" name="language" value="cs" class="lang-btn {% if LANGUAGE_CODE == 'cs' %}active{% endif %}">CZ</button>
+        <button type="submit" name="language" value="en" class="lang-btn {% if LANGUAGE_CODE == 'en' %}active{% endif %}">EN</button>
+      </form>
     </div>
   </nav>
 
@@ -45,13 +56,13 @@
   <footer>
     <div class="container">
       <div class="footer-links">
-        <a href="{% url 'about' %}">About</a>
-        <a href="{% url 'terms' %}">Terms of Service</a>
-        <a href="{% url 'privacy' %}">Privacy Policy</a>
-        <a href="{% url 'shipping' %}">Shipping Info</a>
-        <a href="{% url 'contact' %}">Contact</a>
+        <a href="{% url 'about' %}">{% trans "About" %}</a>
+        <a href="{% url 'terms' %}">{% trans "Terms of Service" %}</a>
+        <a href="{% url 'privacy' %}">{% trans "Privacy Policy" %}</a>
+        <a href="{% url 'shipping' %}">{% trans "Shipping Info" %}</a>
+        <a href="{% url 'contact' %}">{% trans "Contact" %}</a>
       </div>
-      <div class="footer-bottom">&copy; {% now "Y" %} DanielsPrints. All rights reserved.</div>
+      <div class="footer-bottom">&copy; {% now "Y" %} DanielsPrints. {% trans "All rights reserved." %}</div>
     </div>
   </footer>
 

@@ -82,6 +82,16 @@ img, svg { max-width: 100%; height: auto; display: block; }
   border-radius: 999px; font-size: 0.7rem; padding: 1px 6px;
 }
 
+/* Language switcher */
+.lang-switch { display: inline-flex; gap: 2px; margin-left: 0.5rem; }
+.lang-btn {
+  background: transparent; border: 1px solid #ddd; color: var(--secondary);
+  font-weight: 700; font-size: 0.78rem; padding: 0.25rem 0.5rem; cursor: pointer;
+  border-radius: 6px; line-height: 1;
+}
+.lang-btn.active { background: var(--secondary); color: var(--primary); border-color: var(--secondary); }
+.lang-btn:hover { border-color: var(--secondary); }
+
 /* Buttons */
 .btn {
   display: inline-block;

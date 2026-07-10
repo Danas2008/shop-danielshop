@@ -2,6 +2,7 @@
 from decimal import Decimal
 
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 from .utils import parse_spotify_track_url, spotify_code_image_url
 
@@ -9,13 +10,13 @@ PRICE_CZK = Decimal("549")
 
 
 class MusicPlaqueForm(forms.Form):
-    song_name = forms.CharField(label="Název skladby", max_length=100)
-    artist = forms.CharField(label="Interpret", max_length=100)
-    album_art = forms.ImageField(label="Obal alba (volitelné)", required=False)
-    name_line1 = forms.CharField(label="Jméno / text řádek 1", max_length=60, required=False)
-    name_line2 = forms.CharField(label="Jméno / text řádek 2", max_length=60, required=False)
-    date = forms.CharField(label="Datum", max_length=20, required=False)
-    spotify_url = forms.CharField(label="Odkaz na skladbu Spotify", max_length=300)
+    song_name = forms.CharField(label=_("Song name"), max_length=100)
+    artist = forms.CharField(label=_("Artist"), max_length=100)
+    album_art = forms.ImageField(label=_("Album art (optional)"), required=False)
+    name_line1 = forms.CharField(label=_("Name / text line 1"), max_length=60, required=False)
+    name_line2 = forms.CharField(label=_("Name / text line 2"), max_length=60, required=False)
+    date = forms.CharField(label=_("Date"), max_length=20, required=False)
+    spotify_url = forms.CharField(label=_("Spotify track link"), max_length=300)
 
     def clean_spotify_url(self):
         url = self.cleaned_data["spotify_url"]
@@ -52,10 +53,10 @@ CONFIG = {
     "form_class": MusicPlaqueForm,
     "price_func": calculate_price,
     "price_czk": PRICE_CZK,
-    "meta_title": "Hudební plaketa se Spotify kódem | DanielsPrints",
-    "meta_description": (
-        "Originální hudební plaketa s obalem alba, jmény a naskenovatelným Spotify kódem. "
-        "Darujte oblíbenou písničku v 3D tištěné podobě."
+    "meta_title": _("Music Plaque with Spotify Code | DanielsPrints"),
+    "meta_description": _(
+        "A personalized music plaque with album art, names and a scannable Spotify code. "
+        "Give a favourite song as a 3D-printed keepsake."
     ),
     "preview_template": "products/product_types/music_plaque_preview.html",
 }

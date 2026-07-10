@@ -7,12 +7,13 @@ the new ProductType registry.
 from decimal import Decimal
 
 from django import forms
+from django.utils.translation import gettext_lazy as _
 
 
 class ReceiptPlaqueForm(forms.Form):
-    store_name = forms.CharField(label="Název obchodu", max_length=60, required=False)
-    custom_message = forms.CharField(label="Vlastní zpráva", max_length=200, required=False)
-    receipt_date = forms.CharField(label="Datum", max_length=20, required=False)
+    store_name = forms.CharField(label=_("Store name"), max_length=60, required=False)
+    custom_message = forms.CharField(label=_("Custom message"), max_length=200, required=False)
+    receipt_date = forms.CharField(label=_("Date"), max_length=20, required=False)
 
 
 def calculate_price(product, form_data, quantity=1):
@@ -25,7 +26,10 @@ CONFIG = {
     "name": "Účtenková plaketa",
     "form_class": ReceiptPlaqueForm,
     "price_func": calculate_price,
-    "meta_title": "Účtenková plaketa na míru | DanielsPrints",
-    "meta_description": "Vytvořte si originální 3D tištěnou plaketu ve tvaru účtenky s vlastním textem a datem.",
+    "meta_title": _("Custom Receipt Plaque | DanielsPrints"),
+    "meta_description": _(
+        "Design your own 3D-printed receipt-shaped plaque with custom text and date — a "
+        "unique keepsake gift made to order."
+    ),
     "preview_template": "products/product_types/receipt_plaque_preview.html",
 }

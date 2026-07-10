@@ -1,16 +1,17 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Order {{ order.order_id }} — DanielsPrints{% endblock %}
+{% block title %}{% blocktrans with oid=order.order_id %}Order {{ oid }}{% endblocktrans %} — DanielsPrints{% endblock %}
 
 {% block content %}
 <div class="container section" style="max-width:600px;">
-  <h2>Order {{ order.order_id }}</h2>
-  <p>Status: {{ order.get_status_display }}</p>
+  <h2>{% blocktrans with oid=order.order_id %}Order {{ oid }}{% endblocktrans %}</h2>
+  <p>{% trans "Status:" %} {{ order.get_status_display }}</p>
   <ul>
   {% for item in order.items %}
     <li>{{ item.quantity }} × {{ item.product_name }} ({{ item.size }}) — {{ item.unit_price }} Kč</li>
   {% endfor %}
   </ul>
-  <p><strong>Total: {{ order.total_price_czk }} Kč</strong></p>
+  <p><strong>{% trans "Total:" %} {{ order.total_price_czk }} Kč</strong></p>
 </div>
 {% endblock %}

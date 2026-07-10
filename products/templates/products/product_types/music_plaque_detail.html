@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}{{ config.meta_title }}{% endblock %}
 
@@ -16,9 +16,8 @@
 <div class="container section">
   <div class="product-detail-layout">
     <div>
-      <h1>Hudební plaketa</h1>
-      <p>Zadejte skladbu, jména a odkaz na Spotify. Náhled se vygeneruje níže — po odeslání formuláře
-        přidáme plaketu do košíku s cenou {{ config.price_czk }} Kč.</p>
+      <h1>{% trans "Music Plaque" %}</h1>
+      <p>{% blocktrans with price=config.price_czk %}Enter the song, the names and a Spotify link. A preview is generated below — once you submit the form we add the plaque to your cart for {{ price }} Kč.{% endblocktrans %}</p>
 
       {% if form.non_field_errors %}
         <p style="color:#dc2626;">{{ form.non_field_errors }}</p>
@@ -58,17 +57,17 @@
           {{ form.spotify_url }}
           {% if form.spotify_url.errors %}<p style="color:#dc2626;">{{ form.spotify_url.errors }}</p>{% endif %}
         </div>
-        <button type="submit" class="btn btn-primary magnetic">Přidat do košíku — {{ config.price_czk }} Kč</button>
+        <button type="submit" class="btn btn-primary magnetic">{% blocktrans with price=config.price_czk %}Add to cart — {{ price }} Kč{% endblocktrans %}</button>
       </form>
     </div>
 
     <div>
-      <h2>Náhled</h2>
+      <h2>{% trans "Preview" %}</h2>
       {% if customization %}
       <div class="music-card">
         <div class="music-card-art">
           {% if customization.album_art_url %}
-            <img src="{{ customization.album_art_url }}" alt="Obal alba">
+            <img src="{{ customization.album_art_url }}" alt="{% trans 'Album art' %}">
           {% else %}
             <div class="music-card-art-placeholder">♪</div>
           {% endif %}
@@ -86,12 +85,11 @@
         <div class="music-card-names">{{ customization.name_line1 }} {% if customization.name_line2 %}&amp; {{ customization.name_line2 }}{% endif %}</div>
         {% endif %}
         {% if customization.date %}<div class="music-card-date">{{ customization.date }}</div>{% endif %}
-        <img class="music-card-code" src="{{ customization.spotify_code_url }}" alt="Spotify kód">
+        <img class="music-card-code" src="{{ customization.spotify_code_url }}" alt="{% trans 'Spotify code' %}">
       </div>
       {% else %}
-      <p>Po vyplnění a odeslání formuláře uvidíte plaketu v košíku. Náhled kódu Spotify se vygeneruje
-        automaticky z platného odkazu na skladbu.</p>
-      <img src="{% static 'images/products/music_plaque.svg' %}" alt="Ukázka hudební plakety" style="max-width:100%;border-radius:12px;">
+      <p>{% trans "After you fill in and submit the form, you'll see the plaque in your cart. The Spotify code preview is generated automatically from a valid track link." %}</p>
+      <img src="{% static 'images/products/music_plaque.svg' %}" alt="{% trans 'Music plaque example' %}" style="max-width:100%;border-radius:12px;">
       {% endif %}
     </div>
   </div>

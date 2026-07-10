@@ -1,24 +1,25 @@
 {% extends "base.html" %}
+{% load i18n %}
 
-{% block title %}Order Confirmed — DanielsPrints{% endblock %}
+{% block title %}{% trans "Order Confirmed" %} — DanielsPrints{% endblock %}
 
 {% block content %}
 <div class="container section" style="max-width:600px;text-align:center;">
-  <h2>Thank you, {{ order.customer_name }}!</h2>
-  <p>Your order <strong>{{ order.order_id }}</strong> has been received.</p>
-  <p>We'll contact you within 24h to confirm details and shipping.</p>
+  <h2>{% blocktrans with name=order.customer_name %}Thank you, {{ name }}!{% endblocktrans %}</h2>
+  <p>{% blocktrans with oid=order.order_id %}Your order <strong>{{ oid }}</strong> has been received.{% endblocktrans %}</p>
+  <p>{% trans "We'll contact you within 24h to confirm details and shipping." %}</p>
 
   <div style="text-align:left;margin-top:2rem;">
-    <h3>Order Summary</h3>
+    <h3>{% trans "Order Summary" %}</h3>
     <ul>
     {% for item in order.items %}
       <li>{{ item.quantity }} × {{ item.product_name }} ({{ item.size }}) — {{ item.unit_price }} Kč</li>
     {% endfor %}
     </ul>
-    <p><strong>Total: {{ order.total_price_czk }} Kč</strong></p>
-    <p>Status: {{ order.get_status_display }}</p>
+    <p><strong>{% trans "Total:" %} {{ order.total_price_czk }} Kč</strong></p>
+    <p>{% trans "Status:" %} {{ order.get_status_display }}</p>
   </div>
 
-  <a href="{% url 'home' %}" class="btn btn-primary">Back to Home</a>
+  <a href="{% url 'home' %}" class="btn btn-primary magnetic">{% trans "Back to Home" %}</a>
 </div>
 {% endblock %}

@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block title %}{{ product.name }} — DanielsPrints{% endblock %}
 
@@ -19,25 +19,25 @@
 
         {% if product.category == "ready_made" %}
           <div class="form-group">
-            <label for="recipient_name">Recipient name</label>
+            <label for="recipient_name">{% trans "Recipient name" %}</label>
             <input type="text" id="recipient_name" name="recipient_name" required>
           </div>
           <div class="form-group">
-            <label for="your_name">Your name</label>
+            <label for="your_name">{% trans "Your name" %}</label>
             <input type="text" id="your_name" name="your_name" required>
           </div>
           <div class="form-group">
-            <label for="date">Date</label>
+            <label for="date">{% trans "Date" %}</label>
             <input type="date" id="date" name="date" required>
           </div>
         {% endif %}
 
         <div class="form-group">
-          <label for="size">Size</label>
+          <label for="size">{% trans "Size" %}</label>
           <select id="size" name="size">
-            <option value="standard">Standard (8×12cm) — {{ product.price_base_czk }} Kč</option>
+            <option value="standard">{% blocktrans with p=product.price_base_czk %}Standard (8×12cm) — {{ p }} Kč{% endblocktrans %}</option>
             {% if product.price_large_czk %}
-            <option value="large">Large (8×18cm) — {{ product.price_large_czk }} Kč</option>
+            <option value="large">{% blocktrans with p=product.price_large_czk %}Large (8×18cm) — {{ p }} Kč{% endblocktrans %}</option>
             {% endif %}
           </select>
         </div>
@@ -46,27 +46,27 @@
         <label class="addon-card magnetic" for="add_magnets">
           <input type="checkbox" name="add_magnets" id="add_magnets" class="addon-checkbox">
           <span class="addon-label">
-            <span class="addon-title">🧲 Add fridge magnets</span>
-            <span class="addon-desc">Turn your plaque into a fridge magnet — +{{ product.magnets_price_czk }} Kč</span>
+            <span class="addon-title">🧲 {% trans "Add fridge magnets" %}</span>
+            <span class="addon-desc">{% blocktrans with p=product.magnets_price_czk %}Turn your plaque into a fridge magnet — +{{ p }} Kč{% endblocktrans %}</span>
           </span>
         </label>
         {% endif %}
 
-        <button type="submit" class="btn btn-primary magnetic">Add to Cart</button>
+        <button type="submit" class="btn btn-primary magnetic">{% trans "Add to Cart" %}</button>
       </form>
       <p id="add-to-cart-message" style="color:var(--success);margin-top:0.5rem;"></p>
     </div>
   </div>
 
   {% if related %}
-  <h2 style="margin-top:3rem;">You might also like</h2>
+  <h2 style="margin-top:3rem;">{% trans "You might also like" %}</h2>
   <div class="grid">
     {% for r in related %}
     <a href="{{ r.get_absolute_url }}" class="card">
       {% if r.image %}<img src="{{ r.image.url }}" alt="{{ r.name }}">{% else %}<img src="{% static 'images/logo.svg' %}" alt="{{ r.name }}" style="object-fit:contain;padding:2rem;">{% endif %}
       <div class="card-body">
         <h3>{{ r.name }}</h3>
-        <div class="card-price">from {{ r.price_base_czk }} Kč</div>
+        <div class="card-price">{% trans "from" %} {{ r.price_base_czk }} Kč</div>
       </div>
     </a>
     {% endfor %}
@@ -94,7 +94,7 @@ document.getElementById('add-to-cart-form').addEventListener('submit', function 
     add_magnets: form.querySelector('#add_magnets') && form.querySelector('#add_magnets').checked,
     custom_config: JSON.stringify(customConfig),
   }).then(() => {
-    document.getElementById('add-to-cart-message').textContent = 'Added to cart!';
+    document.getElementById('add-to-cart-message').textContent = '{% trans "Added to cart!" %}';
   });
 });
 </script>

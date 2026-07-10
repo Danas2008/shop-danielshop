@@ -2,6 +2,8 @@
 formatting, and audio waveform SVG generation."""
 import re
 
+from django.utils.translation import gettext as _
+
 SPOTIFY_TRACK_RE = re.compile(
     r"^https?://open\.spotify\.com/track/([A-Za-z0-9]{10,30})(?:\?.*)?$"
 )
@@ -18,8 +20,10 @@ def parse_spotify_track_url(url):
     match = SPOTIFY_TRACK_RE.match(url)
     if not match:
         raise ValueError(
-            "Neplatný odkaz na skladbu Spotify. Vložte prosím odkaz ve tvaru "
-            "https://open.spotify.com/track/…"
+            _(
+                "Invalid Spotify track link. Please paste a link in the form "
+                "https://open.spotify.com/track/…"
+            )
         )
     return match.group(1)
 

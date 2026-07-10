@@ -57,5 +57,5 @@ def shipping(request):
 
 def contact(request):
     if request.method == "POST":
-        messages.success(request, "Thanks for reaching out! We'll get back to you within 24 hours.")
+        messages.success(request, _("Thanks for reaching out! We'll get back to you within 24 hours."))
     return render(request, "contact.html")
