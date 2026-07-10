@@ -126,7 +126,8 @@ class MusicPlaqueEndToEndTests(TestCase):
 
         response = client.post(
             "/produkt/hudebni-plaketa/",
-            {
+            secure=True,
+            data={
                 "song_name": "Test Song",
                 "artist": "Test Artist",
                 "name_line1": "Anna",
@@ -149,7 +150,7 @@ class MusicPlaqueEndToEndTests(TestCase):
             "postal_code": "10000",
             "country": "Czechia",
         }
-        response = client.post("/checkout/", checkout_data)
+        response = client.post("/checkout/", checkout_data, secure=True)
         # Stripe call may fail in test env (no network) — order should
         # still be created with structured OrderItem data either way.
         order = Order.objects.first()
