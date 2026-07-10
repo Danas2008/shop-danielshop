@@ -26,10 +26,28 @@ class Product(models.Model):
         (TEMPLATE_FRIENDS, "Becoming Friends"),
     ]
 
+    PRODUCT_TYPE_RECEIPT_PLAQUE = "receipt_plaque"
+    PRODUCT_TYPE_MUSIC_PLAQUE = "music_plaque"
+    PRODUCT_TYPE_SOUNDWAVE_PLAQUE = "soundwave_plaque"
+    PRODUCT_TYPE_GPS_PLAQUE = "gps_plaque"
+    PRODUCT_TYPE_CHOICES = [
+        (PRODUCT_TYPE_RECEIPT_PLAQUE, "Účtenková plaketa"),
+        (PRODUCT_TYPE_MUSIC_PLAQUE, "Hudební plaketa"),
+        (PRODUCT_TYPE_SOUNDWAVE_PLAQUE, "Zvuková vlna"),
+        (PRODUCT_TYPE_GPS_PLAQUE, "Souřadnice"),
+    ]
+
     name = models.CharField(max_length=200)
     slug = models.SlugField(max_length=220, unique=True)
     description = models.TextField(blank=True)
     category = models.CharField(max_length=20, choices=CATEGORY_CHOICES, db_index=True)
+    product_type = models.CharField(
+        max_length=30,
+        choices=PRODUCT_TYPE_CHOICES,
+        default=PRODUCT_TYPE_RECEIPT_PLAQUE,
+        db_index=True,
+        help_text="Determines which customizer/preview/pricing logic is used.",
+    )
     price_base_czk = models.DecimalField(max_digits=8, decimal_places=2)
     price_large_czk = models.DecimalField(max_digits=8, decimal_places=2, null=True, blank=True)
     magnets_price_czk = models.DecimalField(max_digits=8, decimal_places=2, default=49)

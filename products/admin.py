@@ -8,7 +8,7 @@ from .models import Product
 class ProductAdmin(admin.ModelAdmin):
     list_display = ("thumbnail", "name", "category", "price_base_czk", "is_active", "created_at")
     list_display_links = ("thumbnail", "name")
-    list_filter = ("category", "is_active", "template_type")
+    list_filter = ("category", "product_type", "is_active", "template_type")
     search_fields = ("name", "slug", "description")
     readonly_fields = ("created_at", "updated_at")
     prepopulated_fields = {"slug": ("name",)}

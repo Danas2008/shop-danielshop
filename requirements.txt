@@ -9,6 +9,7 @@ packaging==26.2
 pillow==12.3.0
 python-dotenv==1.2.2
 requests==2.34.2
+soundfile==0.13.1
 sqlparse==0.5.5
 stripe==15.3.0
 typing_extensions==4.16.0
