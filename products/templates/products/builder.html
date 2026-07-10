@@ -62,11 +62,15 @@
           </select>
         </div>
 
-        <div class="form-group">
-          <label><input type="checkbox" id="add_magnets"> Add magnets (+49 Kč)</label>
-        </div>
+        <label class="addon-card magnetic" for="add_magnets">
+          <input type="checkbox" id="add_magnets" class="addon-checkbox">
+          <span class="addon-label">
+            <span class="addon-title">🧲 Add fridge magnets</span>
+            <span class="addon-desc">Turn your plaque into a fridge magnet — +49 Kč</span>
+          </span>
+        </label>
 
-        <button type="button" id="add-to-cart-btn" class="btn btn-primary">Add to Cart — <span id="price-tag">400</span> Kč</button>
+        <button type="button" id="add-to-cart-btn" class="btn btn-primary magnetic">Add to Cart — <span id="price-tag">400</span> Kč</button>
         <p id="add-to-cart-message" style="color:var(--success);margin-top:0.5rem;"></p>
       </form>
     </div>

@@ -43,12 +43,16 @@
         </div>
 
         {% if product.category != "custom_stl" %}
-        <div class="form-group">
-          <label><input type="checkbox" name="add_magnets" id="add_magnets"> Add magnets (+{{ product.magnets_price_czk }} Kč)</label>
-        </div>
+        <label class="addon-card magnetic" for="add_magnets">
+          <input type="checkbox" name="add_magnets" id="add_magnets" class="addon-checkbox">
+          <span class="addon-label">
+            <span class="addon-title">🧲 Add fridge magnets</span>
+            <span class="addon-desc">Turn your plaque into a fridge magnet — +{{ product.magnets_price_czk }} Kč</span>
+          </span>
+        </label>
         {% endif %}
 
-        <button type="submit" class="btn btn-primary">Add to Cart</button>
+        <button type="submit" class="btn btn-primary magnetic">Add to Cart</button>
       </form>
       <p id="add-to-cart-message" style="color:var(--success);margin-top:0.5rem;"></p>
     </div>

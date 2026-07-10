@@ -300,6 +300,31 @@ footer a:hover { color: var(--primary); }
 .soundwave-caption { margin-top: 0.75rem; font-weight: 600; }
 .soundwave-date { color: #9ca3af; font-size: 0.85rem; }
 
+/* --- Magnetic hover effect --- */
+.magnetic {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* --- Add-on toggle card (magnets etc.) --- */
+.addon-card {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1rem 1.15rem;
+  margin: 1.25rem 0;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8fff9 0%, #e6fff2 100%);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(66, 245, 158, 0.18);
+}
+.addon-card:hover { box-shadow: 0 8px 22px rgba(66, 245, 158, 0.28); }
+.addon-card .addon-checkbox { width: 22px; height: 22px; flex: 0 0 auto; accent-color: var(--primary); cursor: pointer; }
+.addon-card .addon-label { display: flex; flex-direction: column; margin: 0; cursor: pointer; }
+.addon-card .addon-title { font-weight: 700; }
+.addon-card .addon-desc { font-weight: 400; font-size: 0.85rem; color: #4b5563; }
+
 .gps-pin { color: var(--primary); margin-bottom: 0.5rem; }
 .gps-coords { font-family: "JetBrains Mono", monospace; font-size: 1.1rem; font-weight: 700; }
 .gps-names, .gps-date, .gps-caption { color: #d1d5db; margin-top: 0.35rem; font-size: 0.9rem; }

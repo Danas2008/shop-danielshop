@@ -11,6 +11,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_POST
 
 from cart.models import CartItem
+from shop_config.throttle import throttle
 
 from .models import Order, OrderItem
 
@@ -25,6 +26,7 @@ def _cart_items(request):
     return CartItem.objects.filter(session_key=session_key).select_related("product")
 
 
+@throttle(limit=12, window=60)
 def checkout(request):
     items = list(_cart_items(request))
     subtotal = sum((item.total_price() for item in items), start=0)

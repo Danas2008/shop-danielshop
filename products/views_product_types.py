@@ -8,6 +8,7 @@ from django.shortcuts import redirect, render
 
 from cart.models import CartItem
 from cart.views import _get_session_key
+from shop_config.throttle import throttle
 
 from .models import Product
 from .product_types import get_product_type
@@ -22,6 +23,7 @@ def _get_product(product_type_slug):
     return Product.objects.filter(product_type=product_type_slug, is_active=True).first()
 
 
+@throttle(limit=20, window=60)
 def music_plaque_view(request):
     config = get_product_type("music_plaque")
     product = _get_product("music_plaque")
@@ -68,6 +70,7 @@ def music_plaque_view(request):
     )
 
 
+@throttle(limit=20, window=60)
 def soundwave_plaque_view(request):
     config = get_product_type("soundwave_plaque")
     product = _get_product("soundwave_plaque")
@@ -117,6 +120,7 @@ def soundwave_plaque_view(request):
     )
 
 
+@throttle(limit=20, window=60)
 def gps_plaque_view(request):
     config = get_product_type("gps_plaque")
     product = _get_product("gps_plaque")
