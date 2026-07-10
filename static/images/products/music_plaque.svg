@@ -2,7 +2,9 @@
   <rect width="640" height="480" fill="#1b1b1f"/>
   <rect x="60" y="60" width="200" height="200" rx="12" fill="#3a3a42"/>
   <circle cx="160" cy="160" r="55" fill="#1DB954"/>
-  <path d="M136 145c25-8 55-4 80 12M132 165c22-6 48-2 70 11M130 185c18-4 38 0 55 9" stroke="#0d0d0d" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path d="M124 145c40-12 76-8 106 12" stroke="#0d0d0d" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M120 165c36-10 68-6 96 12" stroke="#0d0d0d" stroke-width="7" fill="none" stroke-linecap="round"/>
+  <path d="M126 185c28-8 52-5 74 10" stroke="#0d0d0d" stroke-width="7" fill="none" stroke-linecap="round"/>
   <text x="60" y="300" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Hudební plaketa</text>
   <text x="60" y="335" fill="#9a9aa0" font-family="Arial, sans-serif" font-size="18">Vaše písnička ve 3D</text>
   <rect x="60" y="360" width="520" height="10" rx="5" fill="#3a3a42"/>
