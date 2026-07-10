@@ -5,6 +5,7 @@ import soundfile as sf
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile
 from django.test import Client, TestCase, override_settings
+from django.urls import reverse
 
 from cart.models import CartItem
 from orders.models import Order, OrderItem
@@ -125,7 +126,7 @@ class MusicPlaqueEndToEndTests(TestCase):
         client = Client()
 
         response = client.post(
-            "/produkt/hudebni-plaketa/",
+            reverse("producttype:music_plaque"),
             secure=True,
             data={
                 "song_name": "Test Song",
