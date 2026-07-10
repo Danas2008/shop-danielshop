@@ -4,7 +4,24 @@ from django.contrib import admin
 from django.utils.html import format_html
 from django.utils import timezone
 
-from .models import Order
+from .models import Order, OrderItem
+
+
+class OrderItemInline(admin.TabularInline):
+    model = OrderItem
+    extra = 0
+    readonly_fields = ("product", "product_type", "quantity", "unit_price_czk", "customization_pretty")
+    fields = ("product", "product_type", "quantity", "unit_price_czk", "customization_pretty")
+    can_delete = False
+
+    def has_add_permission(self, request, obj=None):
+        return False
+
+    def customization_pretty(self, obj):
+        pretty = json.dumps(obj.customization, indent=2, ensure_ascii=False)
+        return format_html("<pre style='white-space:pre-wrap;max-width:500px;'>{}</pre>", pretty)
+
+    customization_pretty.short_description = "Přizpůsobení (pro tisk)"
 
 
 @admin.register(Order)
@@ -22,6 +39,7 @@ class OrderAdmin(admin.ModelAdmin):
         "created_at", "paid_at", "shipped_at",
         "notes",
     )
+    inlines = [OrderItemInline]
     actions = ["mark_as_shipped", "mark_as_delivered"]
 
     def items_pretty(self, obj):

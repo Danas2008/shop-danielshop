@@ -2,6 +2,8 @@ import uuid
 
 from django.db import models
 
+from products.models import Product
+
 
 class Order(models.Model):
     STATUS_PENDING = "pending"
@@ -45,3 +47,26 @@ class Order(models.Model):
 
     def __str__(self):
         return f"Order {self.order_id} ({self.customer_name})"
+
+
+class OrderItem(models.Model):
+    """Structured per-line-item record for an order. Introduced alongside
+    the ProductType registry; Order.items JSONField is kept in place
+    unused for backward compatibility (non-destructive migration)."""
+
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name="order_items")
+    product = models.ForeignKey(Product, on_delete=models.SET_NULL, null=True, blank=True, related_name="order_items")
+    product_type = models.CharField(max_length=30, blank=True)
+    quantity = models.PositiveIntegerField(default=1)
+    unit_price_czk = models.DecimalField(max_digits=8, decimal_places=2)
+    customization = models.JSONField(default=dict, blank=True)
+
+    class Meta:
+        ordering = ["id"]
+
+    def __str__(self):
+        name = self.product.name if self.product else "(smazaný produkt)"
+        return f"{name} x{self.quantity}"
+
+    def total_price(self):
+        return self.unit_price_czk * self.quantity

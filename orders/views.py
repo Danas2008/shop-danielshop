@@ -12,7 +12,7 @@ from django.views.decorators.http import require_POST
 
 from cart.models import CartItem
 
-from .models import Order
+from .models import Order, OrderItem
 
 logger = logging.getLogger(__name__)
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -61,6 +61,20 @@ def checkout(request):
             items=order_items,
             total_price_czk=subtotal,
         )
+
+        for item in items:
+            custom_config = item.custom_config or {}
+            OrderItem.objects.create(
+                order=order,
+                product=item.product,
+                product_type=getattr(item.product, "product_type", "") or "",
+                quantity=item.quantity,
+                unit_price_czk=item.unit_price(),
+                customization={
+                    "size": item.size,
+                    **custom_config,
+                },
+            )
 
         success_url = request.build_absolute_uri(reverse("checkout_success", args=[order.order_id]))
         cancel_url = request.build_absolute_uri(reverse("cart:detail"))
