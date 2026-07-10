@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ config.meta_title }}{% endblock %}
+
+{% block meta_description %}<meta name="description" content="{{ config.meta_description }}">{% endblock %}
+
+{% block og_tags %}
+<meta property="og:type" content="product">
+<meta property="og:title" content="{{ config.meta_title }}">
+<meta property="og:description" content="{{ config.meta_description }}">
+<meta property="og:image" content="{% static 'images/products/soundwave_plaque.svg' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container section">
+  <div class="product-detail-layout">
+    <div>
+      <h1>Zvuková vlna</h1>
+      <p>Nahrajte zvukový soubor (WAV, OGG nebo FLAC) a my z něj vygenerujeme zvukovou vlnu na plaketě.
+        Pokud zvuk nemáte, můžete místo něj zadat vlastní text. Cena {{ config.price_czk }} Kč.</p>
+
+      {% if form.non_field_errors %}
+        <p style="color:#dc2626;">{{ form.non_field_errors }}</p>
+      {% endif %}
+
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="{{ form.audio_file.id_for_label }}">{{ form.audio_file.label }}</label>
+          {{ form.audio_file }}
+          {% if form.audio_file.errors %}<p style="color:#dc2626;">{{ form.audio_file.errors }}</p>{% endif %}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.manual_text.id_for_label }}">{{ form.manual_text.label }}</label>
+          {{ form.manual_text }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.caption.id_for_label }}">{{ form.caption.label }}</label>
+          {{ form.caption }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.date.id_for_label }}">{{ form.date.label }}</label>
+          {{ form.date }}
+        </div>
+        <button type="submit" class="btn btn-primary">Přidat do košíku — {{ config.price_czk }} Kč</button>
+      </form>
+    </div>
+
+    <div>
+      <h2>Náhled</h2>
+      {% if customization %}
+      <div class="soundwave-card">
+        {% if customization.waveform_svg %}
+          <div class="soundwave-svg">{{ customization.waveform_svg|safe }}</div>
+        {% else %}
+          <div class="soundwave-manual-text">{{ customization.manual_text }}</div>
+        {% endif %}
+        {% if customization.caption %}<div class="soundwave-caption">{{ customization.caption }}</div>{% endif %}
+        {% if customization.date %}<div class="soundwave-date">{{ customization.date }}</div>{% endif %}
+      </div>
+      {% else %}
+      <img src="{% static 'images/products/soundwave_plaque.svg' %}" alt="Ukázka zvukové vlny" style="max-width:100%;border-radius:12px;">
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

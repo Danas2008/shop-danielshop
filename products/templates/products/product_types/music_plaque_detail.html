@@ -1,0 +1,99 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}{{ config.meta_title }}{% endblock %}
+
+{% block meta_description %}<meta name="description" content="{{ config.meta_description }}">{% endblock %}
+
+{% block og_tags %}
+<meta property="og:type" content="product">
+<meta property="og:title" content="{{ config.meta_title }}">
+<meta property="og:description" content="{{ config.meta_description }}">
+<meta property="og:image" content="{% static 'images/products/music_plaque.svg' %}">
+{% endblock %}
+
+{% block content %}
+<div class="container section">
+  <div class="product-detail-layout">
+    <div>
+      <h1>Hudební plaketa</h1>
+      <p>Zadejte skladbu, jména a odkaz na Spotify. Náhled se vygeneruje níže — po odeslání formuláře
+        přidáme plaketu do košíku s cenou {{ config.price_czk }} Kč.</p>
+
+      {% if form.non_field_errors %}
+        <p style="color:#dc2626;">{{ form.non_field_errors }}</p>
+      {% endif %}
+
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="{{ form.song_name.id_for_label }}">{{ form.song_name.label }}</label>
+          {{ form.song_name }}
+          {% if form.song_name.errors %}<p style="color:#dc2626;">{{ form.song_name.errors }}</p>{% endif %}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.artist.id_for_label }}">{{ form.artist.label }}</label>
+          {{ form.artist }}
+          {% if form.artist.errors %}<p style="color:#dc2626;">{{ form.artist.errors }}</p>{% endif %}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.album_art.id_for_label }}">{{ form.album_art.label }}</label>
+          {{ form.album_art }}
+          {% if form.album_art.errors %}<p style="color:#dc2626;">{{ form.album_art.errors }}</p>{% endif %}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.name_line1.id_for_label }}">{{ form.name_line1.label }}</label>
+          {{ form.name_line1 }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.name_line2.id_for_label }}">{{ form.name_line2.label }}</label>
+          {{ form.name_line2 }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.date.id_for_label }}">{{ form.date.label }}</label>
+          {{ form.date }}
+        </div>
+        <div class="form-group">
+          <label for="{{ form.spotify_url.id_for_label }}">{{ form.spotify_url.label }}</label>
+          {{ form.spotify_url }}
+          {% if form.spotify_url.errors %}<p style="color:#dc2626;">{{ form.spotify_url.errors }}</p>{% endif %}
+        </div>
+        <button type="submit" class="btn btn-primary">Přidat do košíku — {{ config.price_czk }} Kč</button>
+      </form>
+    </div>
+
+    <div>
+      <h2>Náhled</h2>
+      {% if customization %}
+      <div class="music-card">
+        <div class="music-card-art">
+          {% if customization.album_art_url %}
+            <img src="{{ customization.album_art_url }}" alt="Obal alba">
+          {% else %}
+            <div class="music-card-art-placeholder">♪</div>
+          {% endif %}
+        </div>
+        <div class="music-card-title">{{ customization.song_name }}</div>
+        <div class="music-card-artist">{{ customization.artist }}</div>
+        <div class="music-card-progress"><span></span></div>
+        <div class="music-card-time"><span>0:00</span><span>3:30</span></div>
+        <div class="music-card-controls">
+          <svg viewBox="0 0 24 24" width="20"><path fill="currentColor" d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+          <svg viewBox="0 0 24 24" width="28"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>
+          <svg viewBox="0 0 24 24" width="20"><path fill="currentColor" d="M16 6h2v12h-2zM6 6l8.5 6L6 18z"/></svg>
+        </div>
+        {% if customization.name_line1 or customization.name_line2 %}
+        <div class="music-card-names">{{ customization.name_line1 }} {% if customization.name_line2 %}&amp; {{ customization.name_line2 }}{% endif %}</div>
+        {% endif %}
+        {% if customization.date %}<div class="music-card-date">{{ customization.date }}</div>{% endif %}
+        <img class="music-card-code" src="{{ customization.spotify_code_url }}" alt="Spotify kód">
+      </div>
+      {% else %}
+      <p>Po vyplnění a odeslání formuláře uvidíte plaketu v košíku. Náhled kódu Spotify se vygeneruje
+        automaticky z platného odkazu na skladbu.</p>
+      <img src="{% static 'images/products/music_plaque.svg' %}" alt="Ukázka hudební plakety" style="max-width:100%;border-radius:12px;">
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480">
+  <rect width="640" height="480" fill="#0f2027"/>
+  <circle cx="320" cy="190" r="70" fill="none" stroke="#7fd8be" stroke-width="3" stroke-dasharray="6 6"/>
+  <path d="M320 130c-38 0-64 30-64 62 0 46 64 108 64 108s64-62 64-108c0-32-26-62-64-62z" fill="#7fd8be"/>
+  <circle cx="320" cy="188" r="20" fill="#0f2027"/>
+  <text x="60" y="360" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Plaketa se souřadnicemi</text>
+  <text x="60" y="395" fill="#a9c9c2" font-family="Arial, sans-serif" font-size="18">Zvěčněte místo, které je pro vás výjimečné</text>
+</svg>
