@@ -20,5 +20,13 @@
     <div class="form-group"><label for="country">Country</label><input type="text" id="country" name="country" required></div>
     <button type="submit" class="btn btn-primary" style="width:100%;">Continue to Payment</button>
   </form>
+
+  <p style="text-align:center;color:#555;margin-top:1rem;font-size:0.9rem;">
+    🔒 Secure payment powered by Stripe. Your card details never touch our servers.
+  </p>
+  <p style="text-align:center;color:#777;margin-top:0.5rem;font-size:0.85rem;">
+    <a href="{% url 'shipping' %}">Shipping &amp; returns</a> ·
+    <a href="{% url 'contact' %}">Contact us</a>
+  </p>
 </div>
 {% endblock %}
