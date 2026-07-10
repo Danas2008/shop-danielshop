@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.urls import reverse
 
@@ -46,3 +47,8 @@ class Product(models.Model):
 
     def get_absolute_url(self):
         return reverse("products:detail", kwargs={"slug": self.slug})
+
+    def get_display_image_url(self):
+        if self.image:
+            return self.image.url
+        return settings.STATIC_URL + "images/product-placeholder.svg"

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="600" viewBox="0 0 600 600">
+  <rect width="600" height="600" fill="#eef1f5"/>
+  <rect x="150" y="150" width="300" height="300" rx="16" fill="#d7dde6"/>
+  <circle cx="230" cy="230" r="30" fill="#b7c0cd"/>
+  <path d="M170 380 L260 290 L330 350 L400 260 L430 380 Z" fill="#b7c0cd"/>
+  <text x="300" y="470" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#8a93a1">Obrázek připravujeme</text>
+</svg>
