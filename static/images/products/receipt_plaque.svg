@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" width="640" height="480">
+  <rect width="640" height="480" fill="#0f1a14"/>
+  <g transform="translate(250 70)">
+    <rect x="0" y="0" width="140" height="230" rx="4" fill="#fdfdf8"/>
+    <path d="M0 230 l14 -12 14 12 14 -12 14 12 14 -12 14 12 14 -12 14 12 14 -12 v-8 h-140 z" fill="#fdfdf8"/>
+    <rect x="24" y="24" width="92" height="10" rx="3" fill="#1a1a1a"/>
+    <rect x="20" y="52" width="100" height="4" fill="#c9c9c2"/>
+    <rect x="24" y="72" width="60" height="5" fill="#555"/><rect x="100" y="72" width="16" height="5" fill="#555"/>
+    <rect x="24" y="90" width="52" height="5" fill="#555"/><rect x="100" y="90" width="16" height="5" fill="#555"/>
+    <rect x="24" y="108" width="66" height="5" fill="#555"/><rect x="100" y="108" width="16" height="5" fill="#555"/>
+    <rect x="20" y="130" width="100" height="4" fill="#c9c9c2"/>
+    <rect x="24" y="148" width="40" height="7" fill="#1a1a1a"/><rect x="92" y="148" width="24" height="7" fill="#1a1a1a"/>
+    <rect x="30" y="180" width="80" height="7" rx="3" fill="#42f59e"/>
+  </g>
+  <text x="60" y="360" fill="#ffffff" font-family="Arial, sans-serif" font-size="28" font-weight="bold">Účtenková plaketa</text>
+  <text x="60" y="395" fill="#9fd8bd" font-family="Arial, sans-serif" font-size="18">Váš příběh na 3D účtence</text>
+</svg>

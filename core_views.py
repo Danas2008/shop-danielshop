@@ -1,13 +1,42 @@
 from django.shortcuts import render
 from django.contrib import messages
-
-from products.models import Product
+from django.urls import reverse
+from django.utils.translation import gettext as _
 
 
 def home(request):
-    ready_made = Product.objects.filter(category=Product.CATEGORY_READY_MADE, is_active=True)[:5]
-    stl_models = Product.objects.filter(category=Product.CATEGORY_CUSTOM_STL, is_active=True)[:6]
-    return render(request, "home.html", {"ready_made": ready_made, "stl_models": stl_models})
+    # Showcase all four personalized-gift product types with equal weight.
+    showcase = [
+        {
+            "name": _("Receipt Plaque"),
+            "pitch": _("Your milestone moment as a 3D-printed keepsake receipt."),
+            "price": 400,
+            "url": reverse("builder:index"),
+            "image": "images/products/receipt_plaque.svg",
+        },
+        {
+            "name": _("Music Plaque"),
+            "pitch": _("A favourite song, framed with a scannable Spotify code."),
+            "price": 549,
+            "url": reverse("producttype:music_plaque"),
+            "image": "images/products/music_plaque.svg",
+        },
+        {
+            "name": _("Soundwave Plaque"),
+            "pitch": _("Turn a voice message or song into a printed soundwave."),
+            "price": 599,
+            "url": reverse("producttype:soundwave_plaque"),
+            "image": "images/products/soundwave_plaque.svg",
+        },
+        {
+            "name": _("Coordinates Plaque"),
+            "pitch": _("Immortalise a special place by its GPS coordinates."),
+            "price": 499,
+            "url": reverse("producttype:gps_plaque"),
+            "image": "images/products/gps_plaque.svg",
+        },
+    ]
+    return render(request, "home.html", {"showcase": showcase})
 
 
 def about(request):

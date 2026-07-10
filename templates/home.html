@@ -1,55 +1,37 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static i18n %}
 
 {% block content %}
 <section class="hero">
-  <h1>Turn your milestones into 3D printed receipts</h1>
-  <p>Keepsake receipts commemorating your anniversary, first date, new dog, or best friendships — printed, embossed, and shipped to your door.</p>
+  <h1>{% trans "Personalized 3D-printed gifts, made to remember" %}</h1>
+  <p>{% trans "Turn your favourite moments — a song, a place, a milestone — into a custom 3D-printed keepsake, designed by you and shipped to your door." %}</p>
   <div style="display:flex;justify-content:center;gap:0.75rem;flex-wrap:wrap;">
-    <a href="{% url 'builder:index' %}" class="btn btn-primary">Build Your Own Receipt</a>
-    <a href="{% url 'products:list' %}" class="btn btn-outline">Shop Ready-Made</a>
+    <a href="#products" class="btn btn-primary magnetic">{% trans "Explore the gifts" %}</a>
+    <a href="{% url 'builder:index' %}" class="btn btn-outline magnetic">{% trans "Build your own" %}</a>
   </div>
 </section>
 
-<section class="section container">
-  <h2>Ready-Made Receipts</h2>
+<section class="section container" id="products">
+  <h2>{% trans "Our personalized plaques" %}</h2>
   <div class="grid">
-    {% for product in ready_made %}
-    <a href="{{ product.get_absolute_url }}" class="card">
-      {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% else %}<img src="{% static 'images/logo.svg' %}" alt="{{ product.name }}" style="object-fit:contain;padding:2rem;">{% endif %}
+    {% for item in showcase %}
+    <a href="{{ item.url }}" class="card">
+      <img src="{% static item.image %}" alt="{{ item.name }}">
       <div class="card-body">
-        <h3>{{ product.name }}</h3>
-        <div class="card-price">from {{ product.price_base_czk }} Kč</div>
+        <h3>{{ item.name }}</h3>
+        <p style="color:#555;font-size:0.95rem;margin:0.35rem 0 0.6rem;">{{ item.pitch }}</p>
+        <div class="card-price">{% trans "from" %} {{ item.price }} Kč</div>
       </div>
     </a>
-    {% empty %}
-    <p>Ready-made receipts coming soon.</p>
     {% endfor %}
   </div>
 </section>
 
 <section class="section container">
   <div class="cta-banner">
-    <h2>Design Your Own Receipt</h2>
-    <p>Full control over store name, items, message, and size — with a live 3D preview as you type.</p>
-    <a href="{% url 'builder:index' %}" class="btn btn-primary">Open the Builder</a>
-  </div>
-</section>
-
-<section class="section container">
-  <h2>Custom STL Models</h2>
-  <div class="grid">
-    {% for product in stl_models %}
-    <a href="{{ product.get_absolute_url }}" class="card">
-      {% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">{% else %}<img src="{% static 'images/logo.svg' %}" alt="{{ product.name }}" style="object-fit:contain;padding:2rem;">{% endif %}
-      <div class="card-body">
-        <h3>{{ product.name }}</h3>
-        <div class="card-price">{{ product.price_base_czk }} Kč</div>
-      </div>
-    </a>
-    {% empty %}
-    <p>STL models coming soon.</p>
-    {% endfor %}
+    <h2>{% trans "Design your own receipt plaque" %}</h2>
+    <p>{% trans "Full control over the store name, items, message and size — with a live preview as you type." %}</p>
+    <a href="{% url 'builder:index' %}" class="btn btn-primary magnetic">{% trans "Open the builder" %}</a>
   </div>
 </section>
 {% endblock %}
